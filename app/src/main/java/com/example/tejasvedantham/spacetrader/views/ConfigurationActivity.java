@@ -1,7 +1,9 @@
-package com.example.tejasvedantham.spacetrader;
+package com.example.tejasvedantham.spacetrader.views;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.tejasvedantham.spacetrader.R;
 
 public class ConfigurationActivity extends AppCompatActivity {
 
