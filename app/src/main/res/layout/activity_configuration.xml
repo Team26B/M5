@@ -15,10 +15,11 @@
         android:text="START"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_margin="10dp"
+        android:layout_margin="20dp"
         android:onClick="startButtonPressed"
-        android:src="@drawable/ic_launcher_foreground"
-        app:fabSize="normal"/>
+        android:src="@drawable/ic_launcher_background"
+        app:fabSize="normal"
+        />
 
     <EditText
         android:id="@+id/nameField"
@@ -28,13 +29,16 @@
         android:layout_margin="10dp"/>
 
     <TextView
-    android:id="@+id/fighterText"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Fighter"
-    android:layout_below="@+id/nameField"
-    android:layout_margin="10dp"
-    android:textSize="15dp"/>
+        android:id="@+id/fighterText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fighter"
+        android:layout_below="@+id/nameField"
+        android:layout_margin="10dp"
+        android:textSize="15dp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        />
 
     <SeekBar
         android:id="@+id/fighterSeekbar"
@@ -49,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/fighterSeekbar"
         android:layout_margin="10dp"
-        android:text="Level:"
+        android:text="Level: 0 / 16"
         android:id="@+id/fighterLevel"/>
 
     <TextView
@@ -59,7 +63,10 @@
         android:text="Pilot"
         android:layout_below="@+id/fighterLevel"
         android:layout_margin="10dp"
-        android:textSize="15dp"/>
+        android:textSize="15dp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        />
     <SeekBar
         android:id="@+id/pilotSeekbar"
         android:layout_width="match_parent"
@@ -73,7 +80,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/pilotSeekbar"
         android:layout_margin="10dp"
-        android:text="Level:"
+        android:text="Level: 0 / 16"
         android:id="@+id/pilotLevel"/>
 
     <TextView
@@ -83,7 +90,9 @@
         android:text="Trader"
         android:layout_below="@+id/pilotLevel"
         android:layout_margin="10dp"
-        android:textSize="15dp"/>
+        android:textSize="15dp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"/>
     <SeekBar
         android:id="@+id/traderSeekbar"
         android:layout_width="match_parent"
@@ -97,7 +106,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/traderSeekbar"
         android:layout_margin="10dp"
-        android:text="Level:"
+        android:text="Level: 0 / 16"
         android:id="@+id/traderLevel"/>
 
     <TextView
@@ -107,7 +116,9 @@
         android:text="Engineer"
         android:layout_below="@+id/traderLevel"
         android:layout_margin="10dp"
-        android:textSize="15dp"/>
+        android:textSize="15dp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"/>
     <SeekBar
         android:id="@+id/engineerSeekbar"
         android:layout_width="match_parent"
@@ -121,7 +132,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/engineerSeekbar"
         android:layout_margin="10dp"
-        android:text="Level:"
+        android:text="Level: 0 / 16"
         android:id="@+id/engineerLevel"/>
 
     <TextView
@@ -130,7 +141,9 @@
         android:text="Select a Difficulty:"
         android:layout_below="@+id/engineerLevel"
         android:id="@+id/difficulty_text"
-        android:layout_margin="10dp"/>
+        android:layout_margin="10dp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"/>
 
     <Spinner
         android:id="@+id/difficulty_spinner"
@@ -139,6 +152,7 @@
         android:layout_below="@+id/difficulty_text"
         android:layout_margin="10dp"
         android:entries="@array/difficulty_array"
+        android:layout_centerHorizontal="true"
         >
     </Spinner>
 

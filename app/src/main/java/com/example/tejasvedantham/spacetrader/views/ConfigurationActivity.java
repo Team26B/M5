@@ -61,6 +61,11 @@ public class ConfigurationActivity extends AppCompatActivity {
             Snackbar.make(view, "You haven't allocated all of the points", Snackbar.LENGTH_LONG).show();
             return;
         }
+
+        if (nameField.getText() == null) {
+            Snackbar.make(view, "Please enter a valid name", Snackbar.LENGTH_LONG).show();
+            return;
+        }
     }
 
     public void setFighterSeekbar() {
