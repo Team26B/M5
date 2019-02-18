@@ -151,7 +151,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/difficulty_text"
         android:layout_margin="10dp"
-        android:entries="@array/difficulty_array"
         android:layout_centerHorizontal="true"
         >
     </Spinner>

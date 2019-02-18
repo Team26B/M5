@@ -4,7 +4,9 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
@@ -13,6 +15,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tejasvedantham.spacetrader.R;
+import com.example.tejasvedantham.spacetrader.model.Difficulty;
+import com.example.tejasvedantham.spacetrader.model.Game;
+import com.example.tejasvedantham.spacetrader.model.Player;
+import com.example.tejasvedantham.spacetrader.model.Spaceship;
+import com.example.tejasvedantham.spacetrader.model.SpaceshipType;
+import com.example.tejasvedantham.spacetrader.viewmodels.ConfigurationViewModel;
 
 public class ConfigurationActivity extends AppCompatActivity {
 
@@ -66,6 +74,14 @@ public class ConfigurationActivity extends AppCompatActivity {
             Snackbar.make(view, "Please enter a valid name", Snackbar.LENGTH_LONG).show();
             return;
         }
+
+        Player player = new Player(nameField.getText().toString(), pilotSeekbar.getProgress(), fighterSeekbar.getProgress(), traderSeekbar.getProgress(), engineerSeekbar.getProgress(), new Spaceship(SpaceshipType.GNAT));
+
+        ConfigurationViewModel viewModel = new ConfigurationViewModel(getApplication());
+        viewModel.updatePlayer(player);
+        viewModel.updateGame((Difficulty) difficultySpinner.getSelectedItem());
+
+        System.out.println(player.toString());
     }
 
     public void setFighterSeekbar() {
@@ -169,6 +185,7 @@ public class ConfigurationActivity extends AppCompatActivity {
 
         difficultyText = (TextView) findViewById(R.id.difficulty_text);
         difficultySpinner = (Spinner) findViewById(R.id.difficulty_spinner);
+        difficultySpinner.setAdapter(new ArrayAdapter<Difficulty>(this, android.R.layout.simple_list_item_1, Difficulty.values()));
 
     }
 }
