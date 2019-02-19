@@ -14,9 +14,7 @@ public class Game {
     private static Game singleton_game = null;
 
     /**
-     * Creates an instance of the game with a player and the game difficulty
-     *
-     * @param player the player of the game
+     * @return the singleton_game value
      */
     public static Game getInstance() {
         if (singleton_game == null) {
@@ -26,6 +24,9 @@ public class Game {
         return singleton_game;
     }
 
+    /**
+     * Creates an instance of the game
+     */
     private Game() {
         player = new Player();
         difficulty = Difficulty.BEGINNER;
@@ -39,14 +40,26 @@ public class Game {
         return player;
     }
 
+    /**
+     * Setter method for the player
+     * @param nPlayer the player playing
+     */
     public void setPlayer(Player nPlayer) {
         this.player = nPlayer;
     }
 
+    /**
+     * Getter method for the difficulty
+     * @return the game difficulty
+     */
     public Difficulty getDifficulty() {
         return this.difficulty;
     }
 
+    /**
+     * Setter method for the difficulty
+     * @param nDifficulty the difficulty
+     */
     public void setDifficulty( Difficulty nDifficulty) {
         this.difficulty = nDifficulty;
     }
