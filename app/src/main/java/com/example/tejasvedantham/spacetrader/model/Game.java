@@ -10,6 +10,7 @@ public class Game {
 
     private Player player;
     private Difficulty difficulty;
+    private Universe universe;
 
     private static Game singleton_game = null;
 
@@ -20,7 +21,6 @@ public class Game {
         if (singleton_game == null) {
             singleton_game = new Game();
         }
-
         return singleton_game;
     }
 
@@ -30,6 +30,7 @@ public class Game {
     private Game() {
         player = new Player();
         difficulty = Difficulty.BEGINNER;
+        universe = new Universe();
     }
 
     /**
@@ -62,5 +63,21 @@ public class Game {
      */
     public void setDifficulty( Difficulty nDifficulty) {
         this.difficulty = nDifficulty;
+    }
+
+    /**
+     * Getter method for the universe
+     * @return the universe
+     */
+    public Universe getUniverse() {
+        return universe;
+    }
+
+    /**
+     * Setter method for the difficulty
+     * @param universe the difficulty
+     */
+    public void setUniverse(Universe universe) {
+        this.universe = universe;
     }
 }
