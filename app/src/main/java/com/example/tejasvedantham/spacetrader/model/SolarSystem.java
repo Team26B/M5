@@ -72,6 +72,10 @@ public class SolarSystem {
         this.resource = resource;
     }
 
+    public ArrayList<Planet> getPlanets() {
+        return planets;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (obj == this) return true;
