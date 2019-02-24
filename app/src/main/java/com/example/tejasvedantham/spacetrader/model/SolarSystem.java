@@ -53,7 +53,7 @@ public class SolarSystem {
         this.resource = resource;
     }
 
-    public boolean Equals(SolarSystem otherSS) {
+    public boolean equals(SolarSystem otherSS) {
         return this.getLocation().equals(otherSS.getLocation());
     }
 }
