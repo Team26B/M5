@@ -1,24 +1,30 @@
 package com.example.tejasvedantham.spacetrader.model;
 
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class SolarSystem {
     private String name;
     private Coordinate location;
     private TechLevel techLevel;
     private Resource resource;
+    private ArrayList<Planet> planets = new ArrayList<Planet>();
 
     public SolarSystem(String name, Coordinate coordinate, TechLevel techLevel, Resource resource) {
         this.name = name;
         this.location = coordinate;
         this.techLevel = techLevel;
         this.resource = resource;
+        Planet tempP = new Planet(name);
+        planets.add(tempP);
     }
     public SolarSystem(String name, Coordinate coordinate) {
         this.name = name;
         this.location = coordinate;
         this.techLevel = TechLevel.PREAGRICULTURE;
         this.resource = Resource.NOSPECIALRESOURCES;
+        Planet tempP = new Planet(name);
+        planets.add(tempP);
     }
 
     public String getName() {
