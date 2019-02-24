@@ -1,5 +1,7 @@
 package com.example.tejasvedantham.spacetrader.model;
 
+import java.util.ArrayList;
+
 /**
  * Represents a universe for the game
  *
@@ -12,7 +14,7 @@ public class SolarSystem {
     private Coordinate location;
     private TechLevel techLevel;
     private Resource resource;
-
+    private ArrayList<Planet> planets = new ArrayList<Planet>();
     /**
      * Creates a Solar System object with the given parameters
      * @param name the name of the solar system
@@ -25,6 +27,8 @@ public class SolarSystem {
         this.location = coordinate;
         this.techLevel = techLevel;
         this.resource = resource;
+        Planet tempP = new Planet(name);
+        planets.add(tempP);
     }
 
     /**
