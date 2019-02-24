@@ -1,4 +1,4 @@
-package com.example.tejasvedantham.spacetrader.viewmodels;
+package com.example.tejasvedantham.spacetrader.model;
 
 import java.util.HashSet;
 import java.util.Set;
