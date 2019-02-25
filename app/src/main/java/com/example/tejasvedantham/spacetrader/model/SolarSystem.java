@@ -79,7 +79,10 @@ public class SolarSystem {
     public String toString() {
         StringBuilder toReturn = new StringBuilder("\n");
         for (int i = 0; i < getPlanets().size(); i++) {
-            toReturn.append(getName());
+            toReturn.append(getName() + ": \n"
+                    + "Location: " + getLocation().toString() + "\n"
+                    + "Resource: " + getResource() + "\n"
+                    + "Tech Level: " + getTechLevel());
         }
         toReturn.append("\n");
         return toReturn.toString();

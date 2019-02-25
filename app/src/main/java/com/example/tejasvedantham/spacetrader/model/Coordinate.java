@@ -62,6 +62,11 @@ public class Coordinate {
     }
 
     @Override
+    public String toString() {
+        return "(" + x + ", " + y + ")";
+    }
+
+    @Override
     public boolean equals(Object obj) {
         if (obj == this) return true;
         if (obj == null) return false;
