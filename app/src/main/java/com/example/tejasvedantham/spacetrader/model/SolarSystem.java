@@ -76,6 +76,15 @@ public class SolarSystem {
         return planets;
     }
 
+    public String toString() {
+        StringBuilder toReturn = new StringBuilder("\n");
+        for (int i = 0; i < getPlanets().size(); i++) {
+            toReturn.append(getName());
+        }
+        toReturn.append("\n");
+        return toReturn.toString();
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (obj == this) return true;

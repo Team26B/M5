@@ -1,5 +1,6 @@
 package com.example.tejasvedantham.spacetrader.views;
 
+import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -20,6 +21,7 @@ import com.example.tejasvedantham.spacetrader.model.Game;
 import com.example.tejasvedantham.spacetrader.model.Player;
 import com.example.tejasvedantham.spacetrader.model.Spaceship;
 import com.example.tejasvedantham.spacetrader.model.SpaceshipType;
+import com.example.tejasvedantham.spacetrader.model.Universe;
 import com.example.tejasvedantham.spacetrader.viewmodels.ConfigurationViewModel;
 
 public class ConfigurationActivity extends AppCompatActivity {
@@ -82,6 +84,14 @@ public class ConfigurationActivity extends AppCompatActivity {
         viewModel.updateGame((Difficulty) difficultySpinner.getSelectedItem());
 
         System.out.println(player.toString());
+
+        Universe universe = new Universe();
+        viewModel.updateUniverse(universe);
+
+        System.out.println(universe.toString());
+
+        Intent intent = new Intent(getApplicationContext(), MainGame.class);
+        startActivity(intent);
     }
 
     public void setFighterSeekbar() {

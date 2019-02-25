@@ -6,6 +6,7 @@ import android.arch.lifecycle.AndroidViewModel;
 import com.example.tejasvedantham.spacetrader.model.Difficulty;
 import com.example.tejasvedantham.spacetrader.model.Game;
 import com.example.tejasvedantham.spacetrader.model.Player;
+import com.example.tejasvedantham.spacetrader.model.Universe;
 
 public class ConfigurationViewModel extends AndroidViewModel{
     private Game game;
@@ -22,6 +23,10 @@ public class ConfigurationViewModel extends AndroidViewModel{
 
     public void updateGame(Difficulty difficulty) {
         game.setDifficulty(difficulty);
+    }
+
+    public void updateUniverse(Universe universe) {
+        game.setUniverse(universe);
     }
 
 }

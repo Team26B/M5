@@ -36,4 +36,15 @@ public class Universe {
         return solarSystems;
     }
 
+    public String toString() {
+        StringBuilder toReturn = new StringBuilder("\n");
+        toReturn.append("-----------------");
+        for (int i = 0; i < getSolarSystems().size(); i++) {
+            toReturn.append("Solar Systems: " + solarSystems.toArray()[i].toString());
+        }
+
+        toReturn.append("-----------------");
+        return toReturn.toString();
+    }
+
 }
