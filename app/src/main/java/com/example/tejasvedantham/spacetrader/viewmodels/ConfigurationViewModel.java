@@ -14,7 +14,6 @@ public class ConfigurationViewModel extends AndroidViewModel{
     public ConfigurationViewModel(Application application) {
         super(application);
         game = Game.getInstance();
-
     }
 
     public void updatePlayer(Player player) {
