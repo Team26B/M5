@@ -1,5 +1,7 @@
 package com.example.tejasvedantham.spacetrader.model;
 
+import java.util.ArrayList;
+
 /**
  * Represents a player object for the game
  *
@@ -17,12 +19,12 @@ public class Player {
     private boolean isBountyHunter;
     private boolean isPirate;
     private Spaceship spaceship;
-
+    private ArrayList<TradeGood> ownedGoods;
     /**
      * Creates a player object with a defualt name and spaceship and 4 skill points for each skill
      */
     public Player() {
-        this("Byte Me", 4, 4, 4, 4, new Spaceship(SpaceshipType.GNAT));
+        this("Byte Me", 4, 4, 4, 4, new Spaceship(SpaceshipType.GNAT), new ArrayList<TradeGood>());
     }
 
     /**
@@ -35,7 +37,7 @@ public class Player {
      * @param engineerPoints the number of engineer skill points
      */
     public Player(String name, int pilotPoints, int fighterPoints, int traderPoints,
-                  int engineerPoints, Spaceship spaceship) {
+                  int engineerPoints, Spaceship spaceship, ArrayList<TradeGood> list) {
         this.name = name;
         this.pilotPoints = pilotPoints;
         this.fighterPoints = fighterPoints;
@@ -45,6 +47,7 @@ public class Player {
         this.isBountyHunter = false;
         this.isPirate = false;
         this.spaceship = spaceship;
+        this.ownedGoods = list;
     }
 
     /**
@@ -109,7 +112,72 @@ public class Player {
     public Spaceship getSpaceship() {
         return spaceship;
     }
+    /**
+     * Getter method for the owned goods
+     *
+     * @return owned goods
+     */
+    public ArrayList<TradeGood> getOwnedGoods() {
+        return ownedGoods;
+    }
 
+    /**
+     * buys the good
+     * @param good
+     * @param market
+     * @return true if can buy, false if not
+     */
+    public boolean buy(TradeGood good, Market market) {
+        //list of goods in the market
+        ArrayList<TradeGood> goods = market.getOnMarket();
+        int price = 0;
+        //if the market contains this good
+        if(goods.contains(good)) {
+            price = goods.get(goods.indexOf(good)).getMarketPrice();
+            //if you have enough credits for this purchase
+            if (price > this.numCredits) {
+                //if you have enough space in your cargo bay
+                if (spaceship.getCargoNum() < spaceship.getSpaceShipType().getNumCargoBays()) {
+                    //decrement your credits
+                    this.numCredits = this.numCredits - price;
+                    //increment number of items in cargo bay
+                    spaceship.setCargoNum(spaceship.getCargoNum() + 1);
+                    //add the good to your list
+                    ownedGoods.add(good);
+                    return true;
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * sells a good from the cargo bay
+     * @param good
+     * @param market
+     * @return true if can sell, false if cannot sell
+     */
+    public boolean sell(TradeGood good, Market market) {
+        ArrayList<TradeGood> goods = market.getOnMarket();
+        int price = 0;
+        //if you own the good you are trying to sell
+        if(ownedGoods.contains(good)) {
+            //get the selling price
+            price = goods.get(goods.indexOf(good)).getMarketPrice();
+            //increment the number of credits
+            numCredits += price;
+            //remove the item from your list
+            ownedGoods.remove(good);
+            return true;
+        } else {
+            return false;
+        }
+    }
     /**
      * Determines if the player is a bounty hunter
      *

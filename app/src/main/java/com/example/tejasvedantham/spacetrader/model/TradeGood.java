@@ -53,4 +53,13 @@ public class TradeGood {
     public void setTradeGoodType(TradeGoodType tradeGoodType) {
         this.tradeGoodType = tradeGoodType;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) return true;
+        if (obj == null) return false;
+        if (!(obj instanceof TradeGood)) return false;
+        TradeGood other = (TradeGood) obj;
+        return this.tradeGoodType.equals(other.getTradeGoodType());
+    }
 }
