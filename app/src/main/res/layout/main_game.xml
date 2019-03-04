@@ -7,10 +7,30 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="This screen should display once the universe has been created. Check LOGCAT"
-        android:layout_centerInParent="true"
-        android:textSize="30dp"
+        android:text="Solar System: "
+        android:textSize="20dp"
+        android:id="@+id/solarSystemText"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Planet: "
+        android:textSize="20dp"
+        android:id="@+id/planetText"
+        android:layout_below="@+id/solarSystemText"
+        android:layout_margin="10dp"/>
+
+    <Button
+        android:id="@+id/marketButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_margin="10dp"
-        android:id="@+id/mainText"/>
+        android:layout_alignParentRight="true"
+        android:text="Skedaddle to the Market"
+        android:onClick="goToMarket"/>
+
+
 
 </RelativeLayout>
