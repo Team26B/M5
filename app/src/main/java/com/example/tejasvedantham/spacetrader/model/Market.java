@@ -48,11 +48,16 @@ public class Market{
         int price = 0;
         TradeGood curr;
         for (TradeGoodType temp : TradeGoodType.values()) {
+            //make sure the tech level of this market is valid
             if (temp.getMtlp() > this.level.ordinal()) {
+                //base price
                 base = temp.getBasePrice();
-                ipl = temp.getIpl();
+                //calculate ipl * (Techlevel - MTLP)
+                ipl = temp.getIpl() * (level.ordinal() - temp.getMtlp());
+                //calculate variance
                 coin = (int) Math.random() * 2;
                 var = (int) Math.random() * temp.getVar();
+                //calculate based on heads or tail
                 if (coin == 0) {
                     price = base + ipl - var;
                 } else {
