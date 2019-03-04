@@ -7,10 +7,42 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Cargo Space: "
+        android:id="@+id/cargoSpaceText"
+        android:layout_below="@+id/marketText"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Credits: "
+        android:id="@+id/numCreditsText"
+        android:layout_below="@+id/cargoSpaceText"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="WELCOME TO THE MARKET"
         android:layout_centerHorizontal="true"
         android:layout_margin="10dp"
         android:textSize="20dp"
         android:id="@+id/marketText"/>
+
+    <TextView
+        android:id="@+id/goodsOnShipText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/numCreditsText"
+        android:layout_margin="10dp"
+        android:text="Goods Currently on Ship: "/>
+
+    <TextView
+        android:id="@+id/goodsOnSaleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/goodsOnShipText"
+        android:layout_margin="10dp"
+        android:text="Goods Currently for Sale: "/>
 
 </RelativeLayout>

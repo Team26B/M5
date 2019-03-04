@@ -101,6 +101,10 @@ public class Player {
         return numCredits;
     }
 
+    public void setNumCredits(int numCredits) {
+        this.numCredits = numCredits;
+    }
+
     /**
      * Getter method for the spaceship
      *
