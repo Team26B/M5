@@ -171,6 +171,8 @@ public class Player {
             price = goods.get(goods.indexOf(good)).getMarketPrice();
             //increment the number of credits
             numCredits += price;
+            //decrement the number of items in cargo bay
+            spaceship.setCargoNum(spaceship.getCargoNum() - 1);
             //remove the item from your list
             ownedGoods.remove(good);
             return true;
