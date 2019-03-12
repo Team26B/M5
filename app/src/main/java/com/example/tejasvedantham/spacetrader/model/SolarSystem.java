@@ -15,6 +15,7 @@ public class SolarSystem {
     private TechLevel techLevel;
     private Resource resource;
     private ArrayList<Planet> planets = new ArrayList<Planet>();
+    private Market market;
     /**
      * Creates a Solar System object with the given parameters
      * @param name the name of the solar system
@@ -29,6 +30,7 @@ public class SolarSystem {
         this.resource = resource;
         Planet tempP = new Planet(name);
         planets.add(tempP);
+        market = new Market(this.techLevel);
     }
 
     /**
@@ -74,6 +76,14 @@ public class SolarSystem {
 
     public ArrayList<Planet> getPlanets() {
         return planets;
+    }
+
+    public Market getMarket() {
+        return market;
+    }
+
+    public void setMarket(Market market) {
+        this.market = market;
     }
 
     public String toString() {

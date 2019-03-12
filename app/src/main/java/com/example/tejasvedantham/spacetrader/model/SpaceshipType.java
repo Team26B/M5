@@ -17,6 +17,62 @@ public enum SpaceshipType {
     private int numCargoBays;
     private int numCrewQuarters;
 
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public int getTravelDistance() {
+        return travelDistance;
+    }
+
+    public void setTravelDistance(int travelDistance) {
+        this.travelDistance = travelDistance;
+    }
+
+    public int getHullStrength() {
+        return hullStrength;
+    }
+
+    public void setHullStrength(int hullStrength) {
+        this.hullStrength = hullStrength;
+    }
+
+    public int getNumWeapons() {
+        return numWeapons;
+    }
+
+    public void setNumWeapons(int numWeapons) {
+        this.numWeapons = numWeapons;
+    }
+
+    public int getNumGadgets() {
+        return numGadgets;
+    }
+
+    public void setNumGadgets(int numGadgets) {
+        this.numGadgets = numGadgets;
+    }
+
+    public int getNumCargoBays() {
+        return numCargoBays;
+    }
+
+    public void setNumCargoBays(int numCargoBays) {
+        this.numCargoBays = numCargoBays;
+    }
+
+    public int getNumCrewQuarters() {
+        return numCrewQuarters;
+    }
+
+    public void setNumCrewQuarters(int numCrewQuarters) {
+        this.numCrewQuarters = numCrewQuarters;
+    }
+
     /**
      * Initializes the values of a particular spaceship type
      *

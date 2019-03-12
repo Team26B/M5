@@ -8,13 +8,13 @@ import com.example.tejasvedantham.spacetrader.model.Game;
 import com.example.tejasvedantham.spacetrader.model.Player;
 import com.example.tejasvedantham.spacetrader.model.Universe;
 
-public class ConfigurationViewModel extends AndroidViewModel{
+public class ConfigurationViewModel extends AndroidViewModel {
+
     private Game game;
 
     public ConfigurationViewModel(Application application) {
         super(application);
         game = Game.getInstance();
-
     }
 
     public void updatePlayer(Player player) {

@@ -8,8 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.tejasvedantham.spacetrader.R;
-
-import org.w3c.dom.Text;
+import com.example.tejasvedantham.spacetrader.viewmodels.MainGameViewModel;
 
 public class MainGame extends AppCompatActivity {
 
@@ -25,10 +24,16 @@ public class MainGame extends AppCompatActivity {
         solarSystemText = (TextView) findViewById(R.id.solarSystemText);
         planetText = (TextView) findViewById(R.id.planetText);
         marketButton = (Button) findViewById(R.id.marketButton);
+
+        final MainGameViewModel mvm = new MainGameViewModel(getApplication());
+        solarSystemText.append("" + mvm.getGame().getUniverse().getSolarSystems().iterator().next().getName());
+        planetText.append("" + mvm.getGame().getUniverse().getSolarSystems().iterator().next().getPlanets().iterator().next().getName());
+
+
     }
 
     public void goToMarket(View view) {
-        Intent intent = new Intent(getApplicationContext(), Market.class);
+        Intent intent = new Intent(getApplicationContext(), MarketView.class);
         startActivity(intent);
     }
 }

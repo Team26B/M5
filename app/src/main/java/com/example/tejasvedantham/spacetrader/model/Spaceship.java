@@ -9,7 +9,7 @@ package com.example.tejasvedantham.spacetrader.model;
 public class Spaceship {
 
     private SpaceshipType spaceshipType;
-
+    int cargoNum;
     /**
      * Creates a spaceship object with a designated name and skill points
      *
@@ -17,6 +17,15 @@ public class Spaceship {
      */
     public Spaceship(SpaceshipType spaceshipType) {
         this.spaceshipType = spaceshipType;
+        cargoNum = 10;
+    }
+
+    public int getCargoNum() {
+        return cargoNum;
+    }
+
+    public void setCargoNum(int cargoNum) {
+        this.cargoNum = cargoNum;
     }
 
     /**
