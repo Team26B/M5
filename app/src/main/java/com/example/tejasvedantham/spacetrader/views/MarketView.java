@@ -29,7 +29,19 @@ public class MarketView extends AppCompatActivity {
     private TextView goodsForSaleText;
     private LinearLayout ll;
     private LinearLayout sl;
+    final MarketViewModel mvm = new MarketViewModel(getApplication());
+    final List<TradeGood> forSale = mvm.getGame()
+            .getUniverse()
+            .getSolarSystems()
+            .iterator()
+            .next()
+            .getMarket()
+            .getOnMarket();
 
+    Button[] buyButtons = new Button[forSale.size()];
+    Button[] sellButtons = new Button[forSale.size()];
+    TextView[] buytextViews = new TextView[forSale.size()];
+    TextView[] sellTextViews = new TextView[forSale.size()];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +50,7 @@ public class MarketView extends AppCompatActivity {
 
         initialize();
 
-        final MarketViewModel mvm = new MarketViewModel(getApplication());
+
 
         cargoSpaceText.append("" + mvm.getGame()
                 .getPlayer()
@@ -54,18 +66,9 @@ public class MarketView extends AppCompatActivity {
                 .getPlayer()
                 .getOwnedGoods());
 
-        final List<TradeGood> forSale = mvm.getGame()
-                .getUniverse()
-                .getSolarSystems()
-                .iterator()
-                .next()
-                .getMarket()
-                .getOnMarket();
 
-        Button[] buyButtons = new Button[forSale.size()];
-        final Button[] sellButtons = new Button[forSale.size()];
-        TextView[] buytextViews = new TextView[forSale.size()];
-        final TextView[] sellTextViews = new TextView[forSale.size()];
+
+
 
 
 
@@ -84,7 +87,7 @@ public class MarketView extends AppCompatActivity {
                     + forSale.get(i).getTradeGoodType().getBasePrice() +
                     "\n");
 
-            buytextViews[i].setId(i);
+            //buytextViews[i].setId(i);
             //goodsForSaleText.append(textViews[i].getText());
 
             ll.addView(buytextViews[i], params);
@@ -96,6 +99,7 @@ public class MarketView extends AppCompatActivity {
             buyButtons[i].setLayoutParams(params);
 
             final int finalI = i;
+
             buyButtons[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -119,37 +123,11 @@ public class MarketView extends AppCompatActivity {
                     cargoSpaceText.setText("Cargo Space: " + mvm.getGame().getPlayer().getSpaceship().getCargoNum());
                     numCreditsText.setText("Credits: " + mvm.getGame().getPlayer().getNumCredits());
 
-                    sellTextViews[finalI] = new TextView(getApplicationContext());
-                    sellTextViews[finalI].setText("\n" + mvm.getGame().getPlayer().getOwnedGoods().get(mvm.getGame().getPlayer().getOwnedGoods().size() - 1).getTradeGoodType());
-                    sellTextViews[finalI].setId(finalI);
-                    sl.addView(sellTextViews[finalI], params);
+                    sellFunction(finalI);
 
-                    sellButtons[finalI] = new Button(getApplicationContext());
-                    sellButtons[finalI].setText("SELL");
-                    sellButtons[finalI].setLayoutParams(params);
 
-                    sl.addView(sellButtons[finalI]);
 
-                    sellButtons[finalI].setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            mvm.getGame().getPlayer().sell(forSale.get(finalI), mvm.getGame().getUniverse().getSolarSystems().iterator().next().getMarket());
-                            mvm.updateNumCredits(-1 * forSale.get(finalI).getTradeGoodType().getBasePrice());
-                            mvm.updateCargoSpace(-1);
-                            mvm.updateOwnedGoodsOnSell(forSale.get(finalI));
 
-                            cargoSpaceText.setText("Cargo Space: " + mvm.getGame().getPlayer().getSpaceship().getCargoNum());
-                            numCreditsText.setText("Credits: " + mvm.getGame().getPlayer().getNumCredits());
-
-                            ViewGroup layout = (ViewGroup) sellButtons[finalI].getParent();
-
-                            if (layout != null) {
-                                layout.removeView(sellTextViews[finalI]);
-                                layout.removeView(sellButtons[finalI]);
-                            }
-
-                        }
-                    });
 
 
 
@@ -164,6 +142,47 @@ public class MarketView extends AppCompatActivity {
 
 
 
+    }
+
+    public void sellFunction(final int index) {
+
+        final LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        params.setMargins(10, 10, 10, 10);
+
+        sellTextViews[index] = new TextView(getApplicationContext());
+        sellTextViews[index].setText("\n" + mvm.getGame().getPlayer().getOwnedGoods().get(mvm.getGame().getPlayer().getOwnedGoods().size() - 1).getTradeGoodType());
+        //sellTextViews[finalI].setId(finalI);
+        sl.addView(sellTextViews[index], params);
+
+        sellButtons[index] = new Button(getApplicationContext());
+        sellButtons[index].setText("SELL");
+        sellButtons[index].setLayoutParams(params);
+        //sellButtons[finalI].setId(finalI);
+
+        sl.addView(sellButtons[index]);
+
+        sellButtons[index].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mvm.getGame().getPlayer().sell(forSale.get(index), mvm.getGame().getUniverse().getSolarSystems().iterator().next().getMarket());
+                mvm.updateNumCredits(-1 * forSale.get(index).getTradeGoodType().getBasePrice());
+                mvm.updateCargoSpace(-1);
+                mvm.updateOwnedGoodsOnSell(forSale.get(index));
+
+                cargoSpaceText.setText("Cargo Space: " + mvm.getGame().getPlayer().getSpaceship().getCargoNum());
+                numCreditsText.setText("Credits: " + mvm.getGame().getPlayer().getNumCredits());
+
+
+                ViewGroup layout1 = (ViewGroup) sellTextViews[index].getParent();
+                ViewGroup layout2 = (ViewGroup) v.getParent();
+
+
+                layout1.removeView(sellTextViews[index]);
+
+                layout2.removeView(v);
+
+            }
+        });
     }
 
     private void initialize() {

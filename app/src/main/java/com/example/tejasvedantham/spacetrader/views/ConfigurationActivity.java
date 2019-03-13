@@ -60,7 +60,7 @@ public class ConfigurationActivity extends AppCompatActivity {
         setFighterSeekbar();
         setPilotSeekbar();
         setTraderSeekbar();
-        //setEngineerSeekbar();
+        setEngineerSeekbar();
 
     }
 
@@ -162,7 +162,7 @@ public class ConfigurationActivity extends AppCompatActivity {
             }
         });
     }
-    /*
+
 
     public void setEngineerSeekbar() {
         engineerSeekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -183,7 +183,6 @@ public class ConfigurationActivity extends AppCompatActivity {
             }
         });
     }
-    */
 
     public void initialize() {
         startButton = (FloatingActionButton) findViewById(R.id.startButton);
