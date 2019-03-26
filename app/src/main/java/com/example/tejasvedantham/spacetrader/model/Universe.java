@@ -2,6 +2,7 @@ package com.example.tejasvedantham.spacetrader.model;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.logging.SocketHandler;
 
 /**
  * Represents a universe for the game
@@ -12,6 +13,7 @@ import java.util.Set;
 public class Universe {
 
     private Set<SolarSystem> solarSystems;
+    private SolarSystem currentSS;
 
     /**
      * Creates a Universe object for the game
@@ -26,6 +28,7 @@ public class Universe {
             SolarSystem system = new SolarSystem(Character.toString(name), location);
             solarSystems.add(system);
         }
+        currentSS = solarSystems.iterator().next();
     }
 
     /**
@@ -48,4 +51,11 @@ public class Universe {
         return toReturn.toString();
     }
 
+    public SolarSystem getCurrentSS() {
+        return currentSS;
+    }
+
+    public void setCurrentSS(SolarSystem ss) {
+        this.currentSS = ss;
+    }
 }

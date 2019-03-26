@@ -29,12 +29,10 @@ public class MarketView extends AppCompatActivity {
     private TextView goodsForSaleText;
     private LinearLayout ll;
     private LinearLayout sl;
-    final MarketViewModel mvm = new MarketViewModel(getApplication());
-    final List<TradeGood> forSale = mvm.getGame()
+    MarketViewModel mvm = new MarketViewModel(getApplication());
+    List<TradeGood> forSale = mvm.getGame()
             .getUniverse()
-            .getSolarSystems()
-            .iterator()
-            .next()
+            .getCurrentSS()
             .getMarket()
             .getOnMarket();
 
@@ -84,7 +82,7 @@ public class MarketView extends AppCompatActivity {
             buytextViews[i] = new TextView(this);
             buytextViews[i].setText("\n" + forSale.get(i).getTradeGoodType()
                     + "\t$"
-                    + forSale.get(i).getTradeGoodType().getBasePrice() +
+                    + forSale.get(i).getMarketPrice() +
                     "\n");
 
             //buytextViews[i].setId(i);
@@ -116,7 +114,7 @@ public class MarketView extends AppCompatActivity {
                     }
 
                     mvm.getGame().getPlayer().buy(forSale.get(finalI), mvm.getGame().getUniverse().getSolarSystems().iterator().next().getMarket());
-                    mvm.updateNumCredits(forSale.get(finalI).getTradeGoodType().getBasePrice());
+                    mvm.updateNumCredits(forSale.get(finalI).getMarketPrice());
                     mvm.updateCargoSpace(1);
                     mvm.updateOwnedGoodsOnBuy(forSale.get(finalI));
 
@@ -159,7 +157,7 @@ public class MarketView extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mvm.getGame().getPlayer().sell(forSale.get(index), mvm.getGame().getUniverse().getSolarSystems().iterator().next().getMarket());
-                mvm.updateNumCredits(-1 * forSale.get(index).getTradeGoodType().getBasePrice());
+                mvm.updateNumCredits(-1 * forSale.get(index).getMarketPrice());
                 mvm.updateCargoSpace(-1);
                 mvm.updateOwnedGoodsOnSell(forSale.get(index));
 

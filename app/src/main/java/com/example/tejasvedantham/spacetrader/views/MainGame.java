@@ -10,6 +10,9 @@ import android.widget.TextView;
 import com.example.tejasvedantham.spacetrader.R;
 import com.example.tejasvedantham.spacetrader.viewmodels.MainGameViewModel;
 
+import java.util.Collection;
+import java.util.Iterator;
+
 public class MainGame extends AppCompatActivity {
 
     private TextView solarSystemText;
@@ -28,8 +31,8 @@ public class MainGame extends AppCompatActivity {
         fuelText = (TextView) findViewById(R.id.fuelText);
 
         final MainGameViewModel mvm = new MainGameViewModel(getApplication());
-        solarSystemText.append("" + mvm.getGame().getUniverse().getSolarSystems().iterator().next().getName());
-        planetText.append("" + mvm.getGame().getUniverse().getSolarSystems().iterator().next().getPlanets().iterator().next().getName());
+        solarSystemText.append("" + mvm.getGame().getUniverse().getCurrentSS().getName());
+        planetText.append("" + mvm.getGame().getUniverse().getCurrentSS().getCurrentPlanet().getName());
         fuelText.append("" + mvm.getGame().getPlayer().getSpaceship().getSpaceShipType().getTravelDistance());
 
 
@@ -43,5 +46,15 @@ public class MainGame extends AppCompatActivity {
     public void goToTravel(View view) {
         Intent intent = new Intent(getApplicationContext(), TravelView.class);
         startActivity(intent);
+    }
+
+    public Object getLastElement(final Collection c) {
+        final Iterator iter = c.iterator();
+        Object lastElement = iter.next();
+        while (iter.hasNext()) {
+            lastElement = iter.next();
+        }
+
+        return lastElement;
     }
 }
