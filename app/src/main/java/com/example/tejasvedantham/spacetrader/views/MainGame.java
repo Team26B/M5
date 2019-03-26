@@ -15,6 +15,7 @@ public class MainGame extends AppCompatActivity {
     private TextView solarSystemText;
     private TextView planetText;
     private Button marketButton;
+    private TextView fuelText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,16 +25,23 @@ public class MainGame extends AppCompatActivity {
         solarSystemText = (TextView) findViewById(R.id.solarSystemText);
         planetText = (TextView) findViewById(R.id.planetText);
         marketButton = (Button) findViewById(R.id.marketButton);
+        fuelText = (TextView) findViewById(R.id.fuelText);
 
         final MainGameViewModel mvm = new MainGameViewModel(getApplication());
         solarSystemText.append("" + mvm.getGame().getUniverse().getSolarSystems().iterator().next().getName());
         planetText.append("" + mvm.getGame().getUniverse().getSolarSystems().iterator().next().getPlanets().iterator().next().getName());
+        fuelText.append("" + mvm.getGame().getPlayer().getSpaceship().getSpaceShipType().getTravelDistance());
 
 
     }
 
     public void goToMarket(View view) {
         Intent intent = new Intent(getApplicationContext(), MarketView.class);
+        startActivity(intent);
+    }
+
+    public void goToTravel(View view) {
+        Intent intent = new Intent(getApplicationContext(), TravelView.class);
         startActivity(intent);
     }
 }

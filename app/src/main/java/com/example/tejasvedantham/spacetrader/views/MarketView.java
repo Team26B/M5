@@ -125,12 +125,6 @@ public class MarketView extends AppCompatActivity {
 
                     sellFunction(finalI);
 
-
-
-
-
-
-
                     //goodsOnShipText.append("\n" + mvm.getGame().getPlayer().getOwnedGoods().get(mvm.getGame().getPlayer().getOwnedGoods().size() - 1).getTradeGoodType());
                 }
             });

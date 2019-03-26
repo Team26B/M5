@@ -31,6 +31,25 @@
         android:text="Go to Market"
         android:onClick="goToMarket"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Fuel Left: "
+        android:textSize="20dp"
+        android:id="@+id/fuelText"
+        android:layout_below="@+id/planetText"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/travelButton"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:layout_alignParentLeft="true"
+        android:text="Travel"
+        android:onClick="goToTravel"/>
+
 
 
 </RelativeLayout>
