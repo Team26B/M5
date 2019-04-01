@@ -16,6 +16,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".views.MainGame"
+            android:label="Main Game"
+            >
+
+        </activity>
+
+        <activity android:name=".views.MarketView"
+        android:label="Market">
+
+    </activity>
+
+        <activity android:name=".views.TravelView"
+            android:label="Travel">
+
+        </activity>
+
     </application>
 
 </manifest>
