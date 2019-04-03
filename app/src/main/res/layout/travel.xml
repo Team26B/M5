@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/travelScreenText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TRAVEL SCREEN"
+        android:layout_margin="10dp"
+        android:textSize="20dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/selectText"
+        android:text="Select a destination:"
+        android:textSize="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/travelScreenText"
+        android:layout_margin="10dp"/>
+
+    <Spinner
+        android:id="@+id/travel_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/selectText"
+        >
+    </Spinner>
+
+    <Button
+        android:id="@+id/travelHereButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp"
+        android:text="Travel Here"
+        android:onClick="travelHere"/>
+
+</RelativeLayout>

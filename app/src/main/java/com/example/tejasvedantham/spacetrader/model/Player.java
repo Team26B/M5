@@ -104,6 +104,10 @@ public class Player {
         return numCredits;
     }
 
+    public void setNumCredits(int numCredits) {
+        this.numCredits = numCredits;
+    }
+
     /**
      * Getter method for the spaceship
      *
@@ -170,11 +174,11 @@ public class Player {
             //get the selling price
             price = goods.get(goods.indexOf(good)).getMarketPrice();
             //increment the number of credits
-            numCredits += price;
+            //numCredits += price;
             //decrement the number of items in cargo bay
-            spaceship.setCargoNum(spaceship.getCargoNum() - 1);
+            //spaceship.setCargoNum(spaceship.getCargoNum() - 1);
             //remove the item from your list
-            ownedGoods.remove(good);
+            //ownedGoods.remove(good);
             return true;
         } else {
             return false;

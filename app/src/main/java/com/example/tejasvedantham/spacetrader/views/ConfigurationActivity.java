@@ -21,8 +21,11 @@ import com.example.tejasvedantham.spacetrader.model.Game;
 import com.example.tejasvedantham.spacetrader.model.Player;
 import com.example.tejasvedantham.spacetrader.model.Spaceship;
 import com.example.tejasvedantham.spacetrader.model.SpaceshipType;
+import com.example.tejasvedantham.spacetrader.model.TradeGood;
 import com.example.tejasvedantham.spacetrader.model.Universe;
 import com.example.tejasvedantham.spacetrader.viewmodels.ConfigurationViewModel;
+
+import java.util.ArrayList;
 
 public class ConfigurationActivity extends AppCompatActivity {
 
@@ -77,7 +80,13 @@ public class ConfigurationActivity extends AppCompatActivity {
             return;
         }
 
-        Player player = new Player(nameField.getText().toString(), pilotSeekbar.getProgress(), fighterSeekbar.getProgress(), traderSeekbar.getProgress(), engineerSeekbar.getProgress(), new Spaceship(SpaceshipType.GNAT));
+        Player player = new Player(nameField.getText().toString(),
+                pilotSeekbar.getProgress(),
+                fighterSeekbar.getProgress(),
+                traderSeekbar.getProgress(),
+                engineerSeekbar.getProgress(),
+                new Spaceship(SpaceshipType.GNAT),
+                new ArrayList<TradeGood>());
 
         ConfigurationViewModel viewModel = new ConfigurationViewModel(getApplication());
         viewModel.updatePlayer(player);
@@ -153,6 +162,7 @@ public class ConfigurationActivity extends AppCompatActivity {
             }
         });
     }
+
 
     public void setEngineerSeekbar() {
         engineerSeekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {

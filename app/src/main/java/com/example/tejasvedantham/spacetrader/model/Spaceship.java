@@ -17,7 +17,7 @@ public class Spaceship {
      */
     public Spaceship(SpaceshipType spaceshipType) {
         this.spaceshipType = spaceshipType;
-        cargoNum = 0;
+        cargoNum = 10;
     }
 
     public int getCargoNum() {

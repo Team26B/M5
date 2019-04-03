@@ -7,9 +7,11 @@ public class Market{
     private ArrayList<TradeGood> onMarket = new ArrayList<TradeGood>();
     private ArrayList<TradeGood> onShip = new ArrayList<TradeGood>();
     private TechLevel level;
+
     public Market(TechLevel level){
         this(new ArrayList<TradeGood>(), level);
     }
+
     public Market(ArrayList<TradeGood> onShip, TechLevel level) {
         this.onShip = onShip;
         this.level = level;
@@ -55,8 +57,8 @@ public class Market{
                 //calculate ipl * (Techlevel - MTLP)
                 ipl = temp.getIpl() * (level.ordinal() - temp.getMtlp());
                 //calculate variance
-                coin = (int) Math.random() * 2;
-                var = (int) Math.random() * temp.getVar();
+                coin = (int) (Math.random() * 5);
+                var = (int) (Math.random() * temp.getVar());
                 //calculate based on heads or tail
                 if (coin == 0) {
                     price = base + ipl - var;
