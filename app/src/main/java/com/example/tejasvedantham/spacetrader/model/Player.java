@@ -139,7 +139,7 @@ public class Player {
         if(goods.contains(good)) {
             price = goods.get(goods.indexOf(good)).getMarketPrice();
             //if you have enough credits for this purchase
-            if (price > this.numCredits) {
+            if (price < this.numCredits) {
                 //if you have enough space in your cargo bay
                 if (spaceship.getCargoNum() < spaceship.getSpaceShipType().getNumCargoBays()) {
                     //decrement your credits
