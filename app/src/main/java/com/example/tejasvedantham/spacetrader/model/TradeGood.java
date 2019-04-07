@@ -1,5 +1,7 @@
 package com.example.tejasvedantham.spacetrader.model;
 
+import java.io.Serializable;
+
 /**
  * Represents a trade good object that will be in the market
  *
@@ -21,6 +23,8 @@ public class TradeGood {
         this.tradeGoodType = tradeGoodType;
         this.marketPrice = marketPrice;
     }
+
+    public TradeGood() {}
 
     /**
      * Getter method for the trade good type

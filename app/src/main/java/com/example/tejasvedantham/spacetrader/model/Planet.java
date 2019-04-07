@@ -1,7 +1,10 @@
 package com.example.tejasvedantham.spacetrader.model;
 
+import java.io.Serializable;
+
 public class Planet {
     private String name;
+    public Planet() {};
     public Planet(String name) {
         this.name = name;
     }

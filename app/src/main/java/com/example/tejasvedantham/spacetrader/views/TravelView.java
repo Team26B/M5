@@ -56,7 +56,7 @@ public class TravelView extends AppCompatActivity {
 
             distance = Math.sqrt(Math.pow((x - currentX), 2) + Math.pow((y - currentY), 2));
 
-            if (distance <= fuelLeft) {
+            if (distance <= (fuelLeft)) {
                 spinnerList.add(ss);
             }
 
@@ -74,14 +74,14 @@ public class TravelView extends AppCompatActivity {
             return;
         }
 
-        if (fuelLeft - (int) distance <= 0) {
+        if ((fuelLeft) - (int) distance <= 0) {
             Toast.makeText(getApplicationContext(), "You don't have enough fuel!", Toast.LENGTH_SHORT).show();
             return;
         }
 
         mvm.updateSolarSystem((SolarSystem) travelSpinner.getSelectedItem());
         mvm.updatePlanet();
-        mvm.updateTravelDistanceLeft(fuelLeft - (int) distance);
+        mvm.updateTravelDistanceLeft((fuelLeft) - (int) distance);
 
         Toast.makeText(getApplicationContext(), "Traveled successfully!", Toast.LENGTH_SHORT).show();
 

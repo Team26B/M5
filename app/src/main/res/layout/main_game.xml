@@ -50,6 +50,25 @@
         android:text="Travel"
         android:onClick="goToTravel"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:text="SAVE GAME"
+        android:onClick="saveGame"
+        android:id="@+id/saveGame"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:text="Load Game"
+        android:onClick="loadGame"
+        android:layout_above="@+id/saveGame"/>
+
 
 
 </RelativeLayout>

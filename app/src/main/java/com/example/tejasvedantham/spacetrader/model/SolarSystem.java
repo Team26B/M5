@@ -1,5 +1,8 @@
 package com.example.tejasvedantham.spacetrader.model;
 
+import com.google.firebase.database.Exclude;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -34,6 +37,8 @@ public class SolarSystem {
         market = new Market(this.techLevel);
         currentPlanet = planets.get(0);
     }
+
+    public SolarSystem() {};
 
     /**
      * Creates a Solar System object with the given parameters and two default values
@@ -75,7 +80,7 @@ public class SolarSystem {
     public void setResource(Resource resource) {
         this.resource = resource;
     }
-
+    @Exclude
     public ArrayList<Planet> getPlanets() {
         return planets;
     }

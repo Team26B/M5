@@ -1,5 +1,6 @@
 package com.example.tejasvedantham.spacetrader.views;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tejasvedantham.spacetrader.R;
+import com.example.tejasvedantham.spacetrader.model.DBHelper;
 import com.example.tejasvedantham.spacetrader.model.Market;
 import com.example.tejasvedantham.spacetrader.model.Planet;
 import com.example.tejasvedantham.spacetrader.model.TradeGood;
@@ -41,6 +43,9 @@ public class MarketView extends AppCompatActivity {
     TextView[] buytextViews = new TextView[forSale.size()];
     TextView[] sellTextViews = new TextView[forSale.size()];
 
+    //DBHelper db = new DBHelper(this);
+    //Cursor cursor = db.getGameFromDB();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,11 +70,6 @@ public class MarketView extends AppCompatActivity {
                 .getOwnedGoods());
 
 
-
-
-
-
-
         for (int i = 0; i < forSale.size(); i++) {
 
             ll = (LinearLayout) findViewById(R.id.linearLayout);
@@ -84,9 +84,6 @@ public class MarketView extends AppCompatActivity {
                     + "\t$"
                     + forSale.get(i).getMarketPrice() +
                     "\n");
-
-            //buytextViews[i].setId(i);
-            //goodsForSaleText.append(textViews[i].getText());
 
             ll.addView(buytextViews[i], params);
 
@@ -113,7 +110,7 @@ public class MarketView extends AppCompatActivity {
                         return;
                     }
 
-                    mvm.getGame().getPlayer().buy(forSale.get(finalI), mvm.getGame().getUniverse().getSolarSystems().iterator().next().getMarket());
+                    mvm.getGame().getPlayer().buy(forSale.get(finalI), mvm.getGame().getUniverse().getCurrentSS().getMarket());
                     mvm.updateNumCredits(forSale.get(finalI).getMarketPrice());
                     mvm.updateCargoSpace(1);
                     mvm.updateOwnedGoodsOnBuy(forSale.get(finalI));
@@ -156,7 +153,7 @@ public class MarketView extends AppCompatActivity {
         sellButtons[index].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mvm.getGame().getPlayer().sell(forSale.get(index), mvm.getGame().getUniverse().getSolarSystems().iterator().next().getMarket());
+                mvm.getGame().getPlayer().sell(forSale.get(index), mvm.getGame().getUniverse().getCurrentSS().getMarket());
                 mvm.updateNumCredits(-1 * forSale.get(index).getMarketPrice());
                 mvm.updateCargoSpace(-1);
                 mvm.updateOwnedGoodsOnSell(forSale.get(index));

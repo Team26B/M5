@@ -1,5 +1,7 @@
 package com.example.tejasvedantham.spacetrader.model;
 
+import java.io.Serializable;
+
 /**
  * Represents the game being played
  *
@@ -31,6 +33,10 @@ public class Game {
         player = new Player();
         difficulty = Difficulty.BEGINNER;
         universe = new Universe();
+    }
+
+    public void setGame(Game nGame) {
+        singleton_game = nGame;
     }
 
     /**

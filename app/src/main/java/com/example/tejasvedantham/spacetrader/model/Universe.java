@@ -1,5 +1,8 @@
 package com.example.tejasvedantham.spacetrader.model;
 
+import com.google.firebase.database.Exclude;
+
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.logging.SocketHandler;
@@ -35,6 +38,7 @@ public class Universe {
      * Getter method for the solar systems
      * @return the solar systems
      */
+    @Exclude
     public Set<SolarSystem> getSolarSystems() {
         return solarSystems;
     }

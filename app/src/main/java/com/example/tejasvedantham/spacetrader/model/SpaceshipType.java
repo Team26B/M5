@@ -7,7 +7,7 @@ package com.example.tejasvedantham.spacetrader.model;
  * @version 1.0
  */
 public enum SpaceshipType {
-    GNAT(0, 100, 0, 1, 1, 15, 0);
+    GNAT(0, 1000, 0, 1, 1, 15, 0);
 
     private int size;
     private int travelDistance;

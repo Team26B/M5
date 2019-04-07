@@ -29,4 +29,8 @@ public class ConfigurationViewModel extends AndroidViewModel {
         game.setUniverse(universe);
     }
 
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
 }

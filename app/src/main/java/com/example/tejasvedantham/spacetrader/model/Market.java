@@ -1,9 +1,12 @@
 package com.example.tejasvedantham.spacetrader.model;
 
+import com.google.firebase.database.Exclude;
+
+import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class Market{
+public class Market {
     private ArrayList<TradeGood> onMarket = new ArrayList<TradeGood>();
     private ArrayList<TradeGood> onShip = new ArrayList<TradeGood>();
     private TechLevel level;
@@ -17,7 +20,8 @@ public class Market{
         this.level = level;
         setPrices();
     }
-
+    public Market() {};
+    @Exclude
     public ArrayList<TradeGood> getOnMarket() {
         return onMarket;
     }
@@ -25,7 +29,7 @@ public class Market{
     public void setOnMarket(ArrayList<TradeGood> onMarket) {
         this.onMarket = onMarket;
     }
-
+    @Exclude
     public ArrayList<TradeGood> getOnShip() {
         return onShip;
     }
