@@ -75,4 +75,12 @@ public class Market {
         }
     }
 
+    public void updateMarketPrices(double percentIncrease) {
+        for (TradeGood good : onMarket) {
+            double newPrice = (double) good.getMarketPrice() * (1 + percentIncrease);
+            int updatedPrice = (int) newPrice;
+            good.setMarketPrice(updatedPrice);
+        }
+    }
+
 }

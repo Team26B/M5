@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.tejasvedantham.spacetrader.R;
 import com.example.tejasvedantham.spacetrader.model.Planet;
+import com.example.tejasvedantham.spacetrader.model.RandomEvents;
 import com.example.tejasvedantham.spacetrader.model.SolarSystem;
 import com.example.tejasvedantham.spacetrader.viewmodels.MainGameViewModel;
 
@@ -84,6 +85,14 @@ public class TravelView extends AppCompatActivity {
         mvm.updateTravelDistanceLeft((fuelLeft) - (int) distance);
 
         Toast.makeText(getApplicationContext(), "Traveled successfully!", Toast.LENGTH_SHORT).show();
+
+        int randomNum = (int) (Math.random() * 5);
+        RandomEvents event = RandomEvents.getEventForKey(randomNum);
+        if (event != null) {
+            String message = mvm.getGame().executeRandomEvent(event);
+            Toast.makeText(getApplicationContext(), "A random event occurred! " + message,
+                    Toast.LENGTH_SHORT).show();
+        }
 
         Intent intent = new Intent(getApplicationContext(), MainGame.class);
         startActivity(intent);
