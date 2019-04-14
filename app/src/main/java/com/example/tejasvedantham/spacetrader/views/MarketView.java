@@ -24,12 +24,9 @@ import java.util.List;
 
 public class MarketView extends AppCompatActivity {
 
-    private TextView marketTextView;
     private TextView cargoSpaceText;
     private TextView numCreditsText;
     private TextView goodsOnShipText;
-    private TextView goodsForSaleText;
-    private LinearLayout ll;
     private LinearLayout sl;
     MarketViewModel mvm = new MarketViewModel(getApplication());
     List<TradeGood> forSale = mvm.getGame()
@@ -72,7 +69,7 @@ public class MarketView extends AppCompatActivity {
 
         for (int i = 0; i < forSale.size(); i++) {
 
-            ll = (LinearLayout) findViewById(R.id.linearLayout);
+            LinearLayout ll = (LinearLayout) findViewById(R.id.linearLayout);
             sl = (LinearLayout)findViewById(R.id.shipLayout);
 
 
@@ -176,10 +173,10 @@ public class MarketView extends AppCompatActivity {
 
     private void initialize() {
 
-        marketTextView = (TextView) findViewById(R.id.marketText);
+        TextView marketTextView = (TextView) findViewById(R.id.marketText);
         cargoSpaceText = (TextView) findViewById(R.id.cargoSpaceText);
         numCreditsText = (TextView) findViewById(R.id.numCreditsText);
-        goodsForSaleText = (TextView) findViewById(R.id.goodsOnSaleText);
+        TextView goodsForSaleText = (TextView) findViewById(R.id.goodsOnSaleText);
         goodsOnShipText = (TextView) findViewById(R.id.goodsOnShipText);
 
 

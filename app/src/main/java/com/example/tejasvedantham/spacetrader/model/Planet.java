@@ -4,7 +4,8 @@ import java.io.Serializable;
 
 public class Planet {
     private String name;
-    public Planet() {};
+    public Planet() {}
+
     public Planet(String name) {
         this.name = name;
     }

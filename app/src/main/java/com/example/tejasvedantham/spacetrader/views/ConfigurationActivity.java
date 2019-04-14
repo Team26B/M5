@@ -5,19 +5,19 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+//import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
+//import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
+//import android.widget.Toast;
 
 import com.example.tejasvedantham.spacetrader.R;
 import com.example.tejasvedantham.spacetrader.model.Difficulty;
-import com.example.tejasvedantham.spacetrader.model.Game;
+//import com.example.tejasvedantham.spacetrader.model.Game;
 import com.example.tejasvedantham.spacetrader.model.Player;
 import com.example.tejasvedantham.spacetrader.model.Spaceship;
 import com.example.tejasvedantham.spacetrader.model.SpaceshipType;
@@ -35,13 +35,7 @@ import java.util.ArrayList;
 
 public class ConfigurationActivity extends AppCompatActivity {
 
-    private FloatingActionButton startButton;
     private EditText nameField;
-
-    private TextView fighterText;
-    private TextView pilotText;
-    private TextView traderText;
-    private TextView engineerText;
 
     private SeekBar fighterSeekbar;
     private SeekBar pilotSeekbar;
@@ -53,7 +47,6 @@ public class ConfigurationActivity extends AppCompatActivity {
     private TextView traderLevel;
     private TextView engineerLevel;
 
-    private TextView difficultyText;
     private Spinner difficultySpinner;
 
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
@@ -194,13 +187,13 @@ public class ConfigurationActivity extends AppCompatActivity {
     }
 
     public void initialize() {
-        startButton = (FloatingActionButton) findViewById(R.id.startButton);
+        FloatingActionButton startButton = (FloatingActionButton) findViewById(R.id.startButton);
         nameField = (EditText) findViewById(R.id.nameField);
 
-        fighterText = (TextView) findViewById(R.id.fighterText);
-        pilotText = (TextView) findViewById(R.id.pilotText);
-        traderText = (TextView) findViewById(R.id.traderText);
-        engineerText = (TextView) findViewById(R.id.engineerText);
+        TextView fighterText = (TextView) findViewById(R.id.fighterText);
+        TextView pilotText = (TextView) findViewById(R.id.pilotText);
+        TextView traderText = (TextView) findViewById(R.id.traderText);
+        TextView engineerText = (TextView) findViewById(R.id.engineerText);
 
         fighterSeekbar = (SeekBar) findViewById(R.id.fighterSeekbar);
         pilotSeekbar = (SeekBar) findViewById(R.id.pilotSeekbar);
@@ -212,7 +205,7 @@ public class ConfigurationActivity extends AppCompatActivity {
         traderLevel = (TextView) findViewById(R.id.traderLevel);
         engineerLevel = (TextView) findViewById(R.id.engineerLevel);
 
-        difficultyText = (TextView) findViewById(R.id.difficulty_text);
+        TextView difficultyText = (TextView) findViewById(R.id.difficulty_text);
         difficultySpinner = (Spinner) findViewById(R.id.difficulty_spinner);
         difficultySpinner.setAdapter(new ArrayAdapter<Difficulty>(this, android.R.layout.simple_list_item_1, Difficulty.values()));
 

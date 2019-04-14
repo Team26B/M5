@@ -1,7 +1,7 @@
 package com.example.tejasvedantham.spacetrader.views;
 
 import android.content.Intent;
-import android.database.Cursor;
+//import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tejasvedantham.spacetrader.R;
-import com.example.tejasvedantham.spacetrader.model.DBHelper;
+//import com.example.tejasvedantham.spacetrader.model.DBHelper;
 import com.example.tejasvedantham.spacetrader.model.Game;
 import com.example.tejasvedantham.spacetrader.viewmodels.MainGameViewModel;
 import com.google.firebase.database.DataSnapshot;
@@ -30,7 +30,6 @@ public class MainGame extends AppCompatActivity {
 
     private TextView solarSystemText;
     private TextView planetText;
-    private Button marketButton;
     private TextView fuelText;
     final MainGameViewModel mvm = new MainGameViewModel(getApplication());
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
@@ -42,7 +41,7 @@ public class MainGame extends AppCompatActivity {
 
         solarSystemText = (TextView) findViewById(R.id.solarSystemText);
         planetText = (TextView) findViewById(R.id.planetText);
-        marketButton = (Button) findViewById(R.id.marketButton);
+        Button marketButton = (Button) findViewById(R.id.marketButton);
         fuelText = (TextView) findViewById(R.id.fuelText);
 
         setText();

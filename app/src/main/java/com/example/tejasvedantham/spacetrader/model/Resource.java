@@ -13,5 +13,5 @@ public enum Resource {
     WEIRDMUSHROOMS,
     LOTSOFHERBS,
     ARTISTIC,
-    WARLIKE;
+    WARLIKE
 }

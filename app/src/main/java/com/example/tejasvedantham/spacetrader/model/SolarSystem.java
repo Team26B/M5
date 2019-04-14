@@ -38,7 +38,7 @@ public class SolarSystem {
         currentPlanet = planets.get(0);
     }
 
-    public SolarSystem() {};
+    public SolarSystem() {}
 
     /**
      * Creates a Solar System object with the given parameters and two default values

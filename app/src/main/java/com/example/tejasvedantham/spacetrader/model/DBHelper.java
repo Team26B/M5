@@ -60,8 +60,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public Cursor getGameFromDB() {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res = db.rawQuery("SELECT * FROM " + GAME_TABLE_NAME, null);
-        return res;
+        return db.rawQuery("SELECT * FROM " + GAME_TABLE_NAME, null);
     }
 
     public static byte[] toByteArray(Game game) throws IOException {

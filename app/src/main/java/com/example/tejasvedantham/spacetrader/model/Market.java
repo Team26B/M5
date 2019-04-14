@@ -20,7 +20,8 @@ public class Market {
         this.level = level;
         setPrices();
     }
-    public Market() {};
+    public Market() {}
+
     @Exclude
     public ArrayList<TradeGood> getOnMarket() {
         return onMarket;

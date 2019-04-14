@@ -1,6 +1,6 @@
 package com.example.tejasvedantham.spacetrader.model;
 
-import java.io.Serializable;
+//import java.io.Serializable;
 
 /**
  * Represents a coordinate

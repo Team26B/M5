@@ -84,8 +84,8 @@ public enum SpaceshipType {
      * @param numCargoBays the number of cargo bays on ship
      * @param numCrewQuarters the number of crew quarters on ship
      */
-    private SpaceshipType(int size, int travelDistance, int hullStrength, int numWeapons,
-                          int numGadgets, int numCargoBays, int numCrewQuarters) {
+    SpaceshipType(int size, int travelDistance, int hullStrength, int numWeapons,
+                  int numGadgets, int numCargoBays, int numCrewQuarters) {
         this.size = size;
         this.travelDistance = travelDistance;
         this.hullStrength = hullStrength;

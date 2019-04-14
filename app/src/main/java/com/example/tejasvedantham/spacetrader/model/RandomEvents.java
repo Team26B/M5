@@ -10,7 +10,7 @@ public enum RandomEvents {
      * Initializes a random event
      * @param message a message representing the random event
      */
-    private RandomEvents(String message) {
+    RandomEvents(String message) {
         this.message = message;
     }
 

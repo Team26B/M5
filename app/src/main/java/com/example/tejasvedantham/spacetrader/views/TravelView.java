@@ -24,10 +24,7 @@ import java.util.Set;
 
 public class TravelView extends AppCompatActivity {
 
-    private TextView travelScreenText;
-    private TextView selectText;
     private Spinner travelSpinner;
-    private Button travelHereButton;
     final MainGameViewModel mvm = new MainGameViewModel(getApplication());
     int fuelLeft;
     double distance;
@@ -99,10 +96,10 @@ public class TravelView extends AppCompatActivity {
     }
 
     public void initialize() {
-        travelScreenText = (TextView)findViewById(R.id.travelScreenText);
-        selectText = (TextView)findViewById(R.id.selectText);
+        TextView travelScreenText = (TextView) findViewById(R.id.travelScreenText);
+        TextView selectText = (TextView) findViewById(R.id.selectText);
         travelSpinner = (Spinner)findViewById(R.id.travel_spinner);
-        travelHereButton = (Button)findViewById(R.id.travelHereButton);
+        Button travelHereButton = (Button) findViewById(R.id.travelHereButton);
     }
 
 }

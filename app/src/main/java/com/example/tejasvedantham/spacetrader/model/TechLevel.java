@@ -8,5 +8,5 @@ public enum TechLevel {
     EARLYINDUSTRIAL,
     INDUSTRIAL,
     POSTINDUSTRIAL,
-    HITECH;
+    HITECH
 }

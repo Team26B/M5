@@ -44,9 +44,10 @@ public enum TradeGoodType {
      * @param er a condition when the price is very expensive
      * @param mtl the Min price offered in space trade with random trader (not on planet)
      * @param mth the Max price offered in space trade with random trader (not on a planet)
+     *
      */
-    private TradeGoodType(int basePrice, int mtlp, int mtlu, int ttp, int ipl, int var, String ie,
-                      String cr, String er, int mtl, int mth) {
+    TradeGoodType(int basePrice, int mtlp, int mtlu, int ttp, int ipl, int var, String ie,
+                  String cr, String er, int mtl, int mth) {
         this.basePrice = basePrice;
         this.mtlp = mtlp;
         this.mtlu = mtlu;
@@ -62,7 +63,7 @@ public enum TradeGoodType {
 
     /**
      * Getters and setters for all variables
-     * @return
+     * @return returns price
      */
     public int getBasePrice() {
         return basePrice;
