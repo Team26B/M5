@@ -29,7 +29,7 @@ public class Market {
     public void setOnMarket(ArrayList<TradeGood> onMarket) {
         this.onMarket = onMarket;
     }
-    @Exclude
+
     public ArrayList<TradeGood> getOnShip() {
         return onShip;
     }

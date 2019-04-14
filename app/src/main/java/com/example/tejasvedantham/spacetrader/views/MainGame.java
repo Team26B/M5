@@ -64,6 +64,8 @@ public class MainGame extends AppCompatActivity {
         database.setValue(mvm.getGame());
         database.child("player").child("spaceship").child("spaceShipType").child("fuelLeft")
                 .setValue(mvm.getGame().getPlayer().getSpaceship().getSpaceShipType().getTravelDistance());
+        database.child("universe").child("currentSS").child("market").child("onShip").setValue(
+                mvm.getGame().getUniverse().getCurrentSS().getMarket().getOnShip());
 
         Toast.makeText(getApplicationContext(), "Game saved successfully", Toast.LENGTH_SHORT);
     }
@@ -76,10 +78,7 @@ public class MainGame extends AppCompatActivity {
                 // whenever data at this location is updated.
                 Game toLoad = dataSnapshot.getValue(Game.class);
                 mvm.setGame(toLoad);
-                /*
-                mvm.getGame().getPlayer().getSpaceship().getSpaceShipType().
-                        setTravelDistance((int) (long) dataSnapshot.child("player").child("spaceship").child("spaceShipType").child("fuelLeft").getValue());
-                */
+
                 Log.w("SPACESHIP", "" + mvm.getGame().getPlayer().getSpaceship().getSpaceShipType());
                 setText();
                 Log.w("HERE", mvm.getGame().getUniverse().getCurrentSS().getName());
