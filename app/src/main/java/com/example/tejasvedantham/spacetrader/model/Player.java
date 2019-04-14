@@ -140,7 +140,7 @@ public class Player {
     public boolean buy(TradeGood good, Market market) {
         //list of goods in the market
         ArrayList<TradeGood> goods = market.getOnMarket();
-        int price = 0;
+        int price;
         //if the market contains this good
         if(goods.contains(good)) {
             price = goods.get(goods.indexOf(good)).getMarketPrice();

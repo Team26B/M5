@@ -67,7 +67,7 @@ public class TravelView extends AppCompatActivity {
 
     public void travelHere(View view) {
 
-        if (((SolarSystem) travelSpinner.getSelectedItem()).equals(mvm.getGame().getUniverse().getCurrentSS())) {
+        if (travelSpinner.getSelectedItem().equals(mvm.getGame().getUniverse().getCurrentSS())) {
             Toast.makeText(getApplicationContext(), "You are currently on this location", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -96,10 +96,10 @@ public class TravelView extends AppCompatActivity {
     }
 
     public void initialize() {
-        TextView travelScreenText = (TextView) findViewById(R.id.travelScreenText);
-        TextView selectText = (TextView) findViewById(R.id.selectText);
-        travelSpinner = (Spinner)findViewById(R.id.travel_spinner);
-        Button travelHereButton = (Button) findViewById(R.id.travelHereButton);
+        TextView travelScreenText = findViewById(R.id.travelScreenText);
+        TextView selectText = findViewById(R.id.selectText);
+        travelSpinner = findViewById(R.id.travel_spinner);
+        Button travelHereButton = findViewById(R.id.travelHereButton);
     }
 
 }

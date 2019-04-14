@@ -69,8 +69,8 @@ public class MarketView extends AppCompatActivity {
 
         for (int i = 0; i < forSale.size(); i++) {
 
-            LinearLayout ll = (LinearLayout) findViewById(R.id.linearLayout);
-            sl = (LinearLayout)findViewById(R.id.shipLayout);
+            LinearLayout ll = findViewById(R.id.linearLayout);
+            sl = findViewById(R.id.shipLayout);
 
 
             final LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -173,11 +173,11 @@ public class MarketView extends AppCompatActivity {
 
     private void initialize() {
 
-        TextView marketTextView = (TextView) findViewById(R.id.marketText);
-        cargoSpaceText = (TextView) findViewById(R.id.cargoSpaceText);
-        numCreditsText = (TextView) findViewById(R.id.numCreditsText);
-        TextView goodsForSaleText = (TextView) findViewById(R.id.goodsOnSaleText);
-        goodsOnShipText = (TextView) findViewById(R.id.goodsOnShipText);
+        TextView marketTextView = findViewById(R.id.marketText);
+        cargoSpaceText = findViewById(R.id.cargoSpaceText);
+        numCreditsText = findViewById(R.id.numCreditsText);
+        TextView goodsForSaleText = findViewById(R.id.goodsOnSaleText);
+        goodsOnShipText = findViewById(R.id.goodsOnShipText);
 
 
     }

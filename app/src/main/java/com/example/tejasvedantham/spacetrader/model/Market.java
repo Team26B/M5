@@ -52,7 +52,7 @@ public class Market {
         int ipl;
         int var;
         int coin;
-        int price = 0;
+        int price;
         TradeGood curr;
         for (TradeGoodType temp : TradeGoodType.values()) {
             //make sure the tech level of this market is valid

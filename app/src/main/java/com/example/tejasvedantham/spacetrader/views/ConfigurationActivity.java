@@ -187,26 +187,26 @@ public class ConfigurationActivity extends AppCompatActivity {
     }
 
     public void initialize() {
-        FloatingActionButton startButton = (FloatingActionButton) findViewById(R.id.startButton);
-        nameField = (EditText) findViewById(R.id.nameField);
+        FloatingActionButton startButton = findViewById(R.id.startButton);
+        nameField = findViewById(R.id.nameField);
 
-        TextView fighterText = (TextView) findViewById(R.id.fighterText);
-        TextView pilotText = (TextView) findViewById(R.id.pilotText);
-        TextView traderText = (TextView) findViewById(R.id.traderText);
-        TextView engineerText = (TextView) findViewById(R.id.engineerText);
+        TextView fighterText = findViewById(R.id.fighterText);
+        TextView pilotText = findViewById(R.id.pilotText);
+        TextView traderText = findViewById(R.id.traderText);
+        TextView engineerText = findViewById(R.id.engineerText);
 
-        fighterSeekbar = (SeekBar) findViewById(R.id.fighterSeekbar);
-        pilotSeekbar = (SeekBar) findViewById(R.id.pilotSeekbar);
-        traderSeekbar = (SeekBar) findViewById(R.id.traderSeekbar);
-        engineerSeekbar = (SeekBar) findViewById(R.id.engineerSeekbar);
+        fighterSeekbar = findViewById(R.id.fighterSeekbar);
+        pilotSeekbar = findViewById(R.id.pilotSeekbar);
+        traderSeekbar = findViewById(R.id.traderSeekbar);
+        engineerSeekbar = findViewById(R.id.engineerSeekbar);
 
-        fighterLevel = (TextView) findViewById(R.id.fighterLevel);
-        pilotLevel = (TextView) findViewById(R.id.pilotLevel);
-        traderLevel = (TextView) findViewById(R.id.traderLevel);
-        engineerLevel = (TextView) findViewById(R.id.engineerLevel);
+        fighterLevel = findViewById(R.id.fighterLevel);
+        pilotLevel = findViewById(R.id.pilotLevel);
+        traderLevel = findViewById(R.id.traderLevel);
+        engineerLevel = findViewById(R.id.engineerLevel);
 
-        TextView difficultyText = (TextView) findViewById(R.id.difficulty_text);
-        difficultySpinner = (Spinner) findViewById(R.id.difficulty_spinner);
+        TextView difficultyText = findViewById(R.id.difficulty_text);
+        difficultySpinner = findViewById(R.id.difficulty_spinner);
         difficultySpinner.setAdapter(new ArrayAdapter<Difficulty>(this, android.R.layout.simple_list_item_1, Difficulty.values()));
 
     }

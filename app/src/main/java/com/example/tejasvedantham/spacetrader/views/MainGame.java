@@ -39,10 +39,10 @@ public class MainGame extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.main_game);
 
-        solarSystemText = (TextView) findViewById(R.id.solarSystemText);
-        planetText = (TextView) findViewById(R.id.planetText);
-        Button marketButton = (Button) findViewById(R.id.marketButton);
-        fuelText = (TextView) findViewById(R.id.fuelText);
+        solarSystemText = findViewById(R.id.solarSystemText);
+        planetText = findViewById(R.id.planetText);
+        Button marketButton = findViewById(R.id.marketButton);
+        fuelText = findViewById(R.id.fuelText);
 
         setText();
     }
@@ -94,7 +94,7 @@ public class MainGame extends AppCompatActivity {
     }
 
     public static Game toGame(byte[] bytes) throws IOException, ClassNotFoundException{
-        Object obj = null;
+        Object obj;
         ByteArrayInputStream bis = null;
         ObjectInputStream ois = null;
         try {
