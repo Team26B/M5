@@ -1,5 +1,8 @@
 package com.example.tejasvedantham.spacetrader.model;
 
+import com.google.firebase.database.Exclude;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -121,6 +124,7 @@ public class Player {
      *
      * @return owned goods
      */
+    @Exclude
     public ArrayList<TradeGood> getOwnedGoods() {
         return ownedGoods;
     }

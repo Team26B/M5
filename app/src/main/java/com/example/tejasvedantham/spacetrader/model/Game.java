@@ -1,5 +1,6 @@
 package com.example.tejasvedantham.spacetrader.model;
 
+
 /**
  * Represents the game being played
  *
@@ -31,6 +32,39 @@ public class Game {
         player = new Player();
         difficulty = Difficulty.BEGINNER;
         universe = new Universe();
+    }
+
+    public void setGame(Game nGame) {
+        singleton_game = nGame;
+    }
+
+    /**
+     * Executes the random event
+     * @param event the random event to occur
+     * @return the message to be displayed of the random event that occurred
+     */
+    public String executeRandomEvent(RandomEvents event) {
+        if (event == RandomEvents.INCREASED_PRICES) {
+            this.increasedPricesEvent();
+        } else if (event == RandomEvents.INCREASED_CREDITS) {
+            this.increasedCreditsEvent();
+        }
+        return event.getMessage();
+    }
+
+    /**
+     * Executes the random event of prices being increased
+     */
+    private void increasedPricesEvent() {
+        Market currentMarket = universe.getCurrentSS().getMarket();
+        currentMarket.updateMarketPrices(0.5);
+    }
+
+    /**
+     * Executes the random event of all goods being stolen
+     */
+    private void increasedCreditsEvent() {
+        player.setNumCredits(player.getNumCredits() + 100);
     }
 
     /**

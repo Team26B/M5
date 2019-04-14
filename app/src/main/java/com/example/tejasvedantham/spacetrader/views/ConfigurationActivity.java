@@ -24,6 +24,12 @@ import com.example.tejasvedantham.spacetrader.model.SpaceshipType;
 import com.example.tejasvedantham.spacetrader.model.TradeGood;
 import com.example.tejasvedantham.spacetrader.model.Universe;
 import com.example.tejasvedantham.spacetrader.viewmodels.ConfigurationViewModel;
+import com.example.tejasvedantham.spacetrader.viewmodels.MainGameViewModel;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -49,6 +55,9 @@ public class ConfigurationActivity extends AppCompatActivity {
 
     private TextView difficultyText;
     private Spinner difficultySpinner;
+
+    DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+    final MainGameViewModel mvm = new MainGameViewModel(getApplication());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -208,4 +217,5 @@ public class ConfigurationActivity extends AppCompatActivity {
         difficultySpinner.setAdapter(new ArrayAdapter<Difficulty>(this, android.R.layout.simple_list_item_1, Difficulty.values()));
 
     }
+
 }

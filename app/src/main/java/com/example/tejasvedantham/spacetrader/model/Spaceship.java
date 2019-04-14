@@ -1,5 +1,7 @@
 package com.example.tejasvedantham.spacetrader.model;
 
+import java.io.Serializable;
+
 /**
  * Represents a spaceship object for the game
  *
@@ -10,6 +12,7 @@ public class Spaceship {
 
     private SpaceshipType spaceshipType;
     int cargoNum;
+    int fuelLeft;
     /**
      * Creates a spaceship object with a designated name and skill points
      *
@@ -18,10 +21,21 @@ public class Spaceship {
     public Spaceship(SpaceshipType spaceshipType) {
         this.spaceshipType = spaceshipType;
         cargoNum = 10;
+        fuelLeft = 1000;
     }
+
+    public Spaceship() {}
 
     public int getCargoNum() {
         return cargoNum;
+    }
+
+    public int getFuelLeft() {
+        return this.fuelLeft;
+    }
+
+    public void setFuelLeft(int fl) {
+        this.fuelLeft = fl;
     }
 
     public void setCargoNum(int cargoNum) {

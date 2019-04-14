@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.tejasvedantham.spacetrader.R;
 import com.example.tejasvedantham.spacetrader.model.Planet;
+import com.example.tejasvedantham.spacetrader.model.RandomEvents;
 import com.example.tejasvedantham.spacetrader.model.SolarSystem;
 import com.example.tejasvedantham.spacetrader.viewmodels.MainGameViewModel;
 
@@ -56,7 +57,7 @@ public class TravelView extends AppCompatActivity {
 
             distance = Math.sqrt(Math.pow((x - currentX), 2) + Math.pow((y - currentY), 2));
 
-            if (distance <= fuelLeft) {
+            if (distance <= (fuelLeft)) {
                 spinnerList.add(ss);
             }
 
@@ -74,16 +75,24 @@ public class TravelView extends AppCompatActivity {
             return;
         }
 
-        if (fuelLeft - (int) distance <= 0) {
+        if ((fuelLeft) - (int) distance <= 0) {
             Toast.makeText(getApplicationContext(), "You don't have enough fuel!", Toast.LENGTH_SHORT).show();
             return;
         }
 
         mvm.updateSolarSystem((SolarSystem) travelSpinner.getSelectedItem());
         mvm.updatePlanet();
-        mvm.updateTravelDistanceLeft(fuelLeft - (int) distance);
+        mvm.updateTravelDistanceLeft((fuelLeft) - (int) distance);
 
         Toast.makeText(getApplicationContext(), "Traveled successfully!", Toast.LENGTH_SHORT).show();
+
+        int randomNum = (int) (Math.random() * 5);
+        RandomEvents event = RandomEvents.getEventForKey(randomNum);
+        if (event != null) {
+            String message = mvm.getGame().executeRandomEvent(event);
+            Toast.makeText(getApplicationContext(), "A random event occurred! " + message,
+                    Toast.LENGTH_SHORT).show();
+        }
 
         Intent intent = new Intent(getApplicationContext(), MainGame.class);
         startActivity(intent);
