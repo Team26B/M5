@@ -62,6 +62,7 @@ public enum TradeGoodType {
 
     /**
      * Getters and setters for all variables
+     * @return
      */
     public int getBasePrice() {
         return basePrice;

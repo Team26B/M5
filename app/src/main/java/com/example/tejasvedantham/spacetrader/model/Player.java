@@ -38,6 +38,8 @@ public class Player {
      * @param fighterPoints  the number of fighter skill points
      * @param traderPoints   the number of trader skill points
      * @param engineerPoints the number of engineer skill points
+     * @param spaceship      the spaceship
+     * @param list           the list of goods
      */
     public Player(String name, int pilotPoints, int fighterPoints, int traderPoints,
                   int engineerPoints, Spaceship spaceship, ArrayList<TradeGood> list) {
@@ -131,8 +133,8 @@ public class Player {
 
     /**
      * buys the good
-     * @param good
-     * @param market
+     * @param good      the good to buy
+     * @param market    the market to buy in
      * @return true if can buy, false if not
      */
     public boolean buy(TradeGood good, Market market) {
@@ -166,8 +168,8 @@ public class Player {
 
     /**
      * sells a good from the cargo bay
-     * @param good
-     * @param market
+     * @param good      the good to sell
+     * @param market    market to sell in
      * @return true if can sell, false if cannot sell
      */
     public boolean sell(TradeGood good, Market market) {
