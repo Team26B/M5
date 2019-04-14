@@ -2,7 +2,7 @@ package com.example.tejasvedantham.spacetrader.views;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
+//import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tejasvedantham.spacetrader.R;
-import com.example.tejasvedantham.spacetrader.model.Planet;
+//import com.example.tejasvedantham.spacetrader.model.Planet;
 import com.example.tejasvedantham.spacetrader.model.RandomEvents;
 import com.example.tejasvedantham.spacetrader.model.SolarSystem;
 import com.example.tejasvedantham.spacetrader.viewmodels.MainGameViewModel;
@@ -20,7 +20,7 @@ import com.example.tejasvedantham.spacetrader.viewmodels.MainGameViewModel;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
+//import java.util.Set;
 
 public class TravelView extends AppCompatActivity {
 

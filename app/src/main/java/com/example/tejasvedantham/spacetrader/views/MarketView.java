@@ -1,24 +1,24 @@
 package com.example.tejasvedantham.spacetrader.views;
 
-import android.database.Cursor;
+//import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
+//import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tejasvedantham.spacetrader.R;
-import com.example.tejasvedantham.spacetrader.model.DBHelper;
-import com.example.tejasvedantham.spacetrader.model.Market;
-import com.example.tejasvedantham.spacetrader.model.Planet;
+//import com.example.tejasvedantham.spacetrader.model.DBHelper;
+//import com.example.tejasvedantham.spacetrader.model.Market;
+//import com.example.tejasvedantham.spacetrader.model.Planet;
 import com.example.tejasvedantham.spacetrader.model.TradeGood;
 import com.example.tejasvedantham.spacetrader.viewmodels.MarketViewModel;
 
-import org.w3c.dom.Text;
+//import org.w3c.dom.Text;
 
 import java.util.List;
 

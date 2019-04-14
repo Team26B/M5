@@ -1,8 +1,10 @@
 package com.example.tejasvedantham.spacetrader.model;
 
+import android.support.annotation.NonNull;
+
 import com.google.firebase.database.Exclude;
 
-import java.io.Serializable;
+//import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -17,7 +19,7 @@ public class SolarSystem {
     private Coordinate location;
     private TechLevel techLevel;
     private Resource resource;
-    private ArrayList<Planet> planets = new ArrayList<Planet>();
+    private ArrayList<Planet> planets = new ArrayList<>();
     private Market market;
     private Planet currentPlanet;
     /**
@@ -101,13 +103,11 @@ public class SolarSystem {
         this.currentPlanet = p;
     }
 
+    @NonNull
     public String toString() {
         StringBuilder toReturn = new StringBuilder("\n");
         for (int i = 0; i < getPlanets().size(); i++) {
-            toReturn.append(getName() + ": \n"
-                    + "Location: " + getLocation().toString() + "\n"
-                    + "Resource: " + getResource() + "\n"
-                    + "Tech Level: " + getTechLevel());
+            toReturn.append(getName()).append(": \n").append("Location: ").append(getLocation().toString()).append("\n").append("Resource: ").append(getResource()).append("\n").append("Tech Level: ").append(getTechLevel());
         }
         toReturn.append("\n");
         return toReturn.toString();

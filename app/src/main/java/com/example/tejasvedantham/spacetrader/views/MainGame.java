@@ -23,8 +23,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.util.Collection;
-import java.util.Iterator;
+//import java.util.Collection;
+//import java.util.Iterator;
 
 public class MainGame extends AppCompatActivity {
 
@@ -95,19 +95,8 @@ public class MainGame extends AppCompatActivity {
 
     public static Game toGame(byte[] bytes) throws IOException, ClassNotFoundException{
         Object obj;
-        ByteArrayInputStream bis = null;
-        ObjectInputStream ois = null;
-        try {
-            bis = new ByteArrayInputStream(bytes);
-            ois = new ObjectInputStream(bis);
+        try (ByteArrayInputStream bis = new ByteArrayInputStream(bytes); ObjectInputStream ois = new ObjectInputStream(bis)) {
             obj = ois.readObject();
-        } finally {
-            if (bis != null) {
-                bis.close();
-            }
-            if (ois != null) {
-                ois.close();
-            }
         }
         return (Game) obj;
     }

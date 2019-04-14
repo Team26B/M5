@@ -5,7 +5,7 @@ import android.arch.lifecycle.AndroidViewModel;
 
 import com.example.tejasvedantham.spacetrader.model.Game;
 import com.example.tejasvedantham.spacetrader.model.Market;
-import com.example.tejasvedantham.spacetrader.model.Planet;
+//import com.example.tejasvedantham.spacetrader.model.Planet;
 import com.example.tejasvedantham.spacetrader.model.SolarSystem;
 
 public class MainGameViewModel extends AndroidViewModel {

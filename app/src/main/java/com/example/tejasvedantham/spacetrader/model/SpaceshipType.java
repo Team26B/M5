@@ -7,7 +7,7 @@ package com.example.tejasvedantham.spacetrader.model;
  * @version 1.0
  */
 public enum SpaceshipType {
-    GNAT(0, 1000, 0, 1, 1, 15, 0);
+    GNAT();
 
     private int size;
     private int travelDistance;
@@ -76,22 +76,14 @@ public enum SpaceshipType {
     /**
      * Initializes the values of a particular spaceship type
      *
-     * @param size the size of the ship
-     * @param travelDistance the distance the ship can travel
-     * @param hullStrength the hull strength of the ship
-     * @param numWeapons the number of weapons held by ship
-     * @param numGadgets the number of gadgets held by ship
-     * @param numCargoBays the number of cargo bays on ship
-     * @param numCrewQuarters the number of crew quarters on ship
      */
-    SpaceshipType(int size, int travelDistance, int hullStrength, int numWeapons,
-                  int numGadgets, int numCargoBays, int numCrewQuarters) {
-        this.size = size;
-        this.travelDistance = travelDistance;
-        this.hullStrength = hullStrength;
-        this.numWeapons = numWeapons;
-        this.numGadgets = numGadgets;
-        this.numCargoBays = numCargoBays;
-        this.numCrewQuarters = numCrewQuarters;
+    SpaceshipType() {
+        this.size = 0;
+        this.travelDistance = 1000;
+        this.hullStrength = 0;
+        this.numWeapons = 1;
+        this.numGadgets = 1;
+        this.numCargoBays = 15;
+        this.numCrewQuarters = 0;
     }
 }

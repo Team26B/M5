@@ -65,20 +65,11 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public static byte[] toByteArray(Game game) throws IOException {
         byte[] bytes;
-        ByteArrayOutputStream bos = new ByteArrayOutputStream();
-        ObjectOutput out = null;
 
-        try {
-            out = new ObjectOutputStream(bos);
+        try (ByteArrayOutputStream bos = new ByteArrayOutputStream(); ObjectOutput out = new ObjectOutputStream(bos)) {
             out.writeObject(game);
             out.flush();
             bytes = bos.toByteArray();
-        } finally {
-            if (out != null) {
-                out.close();
-            }
-
-            bos.close();
         }
 
         return bytes;

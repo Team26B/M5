@@ -1,11 +1,13 @@
 package com.example.tejasvedantham.spacetrader.model;
 
+import android.support.annotation.NonNull;
+
 import com.google.firebase.database.Exclude;
 
-import java.io.Serializable;
+//import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.logging.SocketHandler;
+//import java.util.logging.SocketHandler;
 
 /**
  * Represents a universe for the game
@@ -22,7 +24,7 @@ public class Universe {
      * Creates a Universe object for the game
      */
     public Universe () {
-        solarSystems = new HashSet<SolarSystem>();
+        solarSystems = new HashSet<>();
         while (solarSystems.size() < 10) {
             int randomX = (int) (Math.random() * 151);
             int randomY = (int) (Math.random() * 101);
@@ -43,6 +45,7 @@ public class Universe {
         return solarSystems;
     }
 
+    @NonNull
     public String toString() {
         StringBuilder toReturn = new StringBuilder("\n");
         toReturn.append("-----------------");

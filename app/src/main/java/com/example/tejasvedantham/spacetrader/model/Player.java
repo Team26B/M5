@@ -1,8 +1,10 @@
 package com.example.tejasvedantham.spacetrader.model;
 
+import android.support.annotation.NonNull;
+
 import com.google.firebase.database.Exclude;
 
-import java.io.Serializable;
+//import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -174,21 +176,17 @@ public class Player {
      */
     public boolean sell(TradeGood good, Market market) {
         ArrayList<TradeGood> goods = market.getOnMarket();
-        int price = 0;
+        //int price = 0;
         //if you own the good you are trying to sell
-        if(ownedGoods.contains(good)) {
-            //get the selling price
-            price = goods.get(goods.indexOf(good)).getMarketPrice();
-            //increment the number of credits
-            //numCredits += price;
-            //decrement the number of items in cargo bay
-            //spaceship.setCargoNum(spaceship.getCargoNum() - 1);
-            //remove the item from your list
-            //ownedGoods.remove(good);
-            return true;
-        } else {
-            return false;
-        }
+        //get the selling price
+//price = goods.get(goods.indexOf(good)).getMarketPrice();
+//increment the number of credits
+//numCredits += price;
+//decrement the number of items in cargo bay
+//spaceship.setCargoNum(spaceship.getCargoNum() - 1);
+//remove the item from your list
+//ownedGoods.remove(good);
+        return ownedGoods.contains(good);
     }
     /**
      * Determines if the player is a bounty hunter
@@ -222,20 +220,19 @@ public class Player {
         //This method will be implemented in a later version
     }
 
+    @NonNull
     public String toString() {
-        StringBuilder toReturn = new StringBuilder("\n");
-        toReturn.append("--------------------\n");
-        toReturn.append("Player name: " + getName() + "\n");
-        toReturn.append("Game difficulty: " + Game.getInstance().getDifficulty() + "\n");
-        toReturn.append("Fighter Points: " + getFighterPoints() + "\n");
-        toReturn.append("Engineer Points: " + getEngineerPoints() + "\n");
-        toReturn.append("Trader Points: " + getTraderPoints() + "\n");
-        toReturn.append("Pilot Points: " + getPilotPoints() + "\n");
-        toReturn.append("Credits: " + getNumCredits() + "\n");
-        toReturn.append("Spaceship Type: " + getSpaceship().getSpaceShipType() + "\n");
-        toReturn.append("--------------------");
 
-        return toReturn.toString();
+        return "\n" + "--------------------\n" +
+                "Player name: " + getName() + "\n" +
+                "Game difficulty: " + Game.getInstance().getDifficulty() + "\n" +
+                "Fighter Points: " + getFighterPoints() + "\n" +
+                "Engineer Points: " + getEngineerPoints() + "\n" +
+                "Trader Points: " + getTraderPoints() + "\n" +
+                "Pilot Points: " + getPilotPoints() + "\n" +
+                "Credits: " + getNumCredits() + "\n" +
+                "Spaceship Type: " + getSpaceship().getSpaceShipType() + "\n" +
+                "--------------------";
     }
 
 }

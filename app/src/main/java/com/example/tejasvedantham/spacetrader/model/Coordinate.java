@@ -2,6 +2,8 @@ package com.example.tejasvedantham.spacetrader.model;
 
 //import java.io.Serializable;
 
+import android.support.annotation.NonNull;
+
 /**
  * Represents a coordinate
  *
@@ -63,6 +65,7 @@ public class Coordinate {
         return y;
     }
 
+    @NonNull
     @Override
     public String toString() {
         return "(" + x + ", " + y + ")";

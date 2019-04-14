@@ -207,7 +207,7 @@ public class ConfigurationActivity extends AppCompatActivity {
 
         TextView difficultyText = findViewById(R.id.difficulty_text);
         difficultySpinner = findViewById(R.id.difficulty_spinner);
-        difficultySpinner.setAdapter(new ArrayAdapter<Difficulty>(this, android.R.layout.simple_list_item_1, Difficulty.values()));
+        difficultySpinner.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, Difficulty.values()));
 
     }
 
