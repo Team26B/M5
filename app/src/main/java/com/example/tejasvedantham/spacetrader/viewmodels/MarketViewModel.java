@@ -9,7 +9,7 @@ import com.example.tejasvedantham.spacetrader.model.TradeGood;
 
 public class MarketViewModel extends AndroidViewModel {
 
-    private Game game;
+    private final Game game;
 
         public MarketViewModel(Application application) {
             super(application);

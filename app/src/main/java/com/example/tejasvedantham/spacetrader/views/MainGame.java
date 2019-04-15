@@ -31,8 +31,8 @@ public class MainGame extends AppCompatActivity {
     private TextView solarSystemText;
     private TextView planetText;
     private TextView fuelText;
-    final MainGameViewModel mvm = new MainGameViewModel(getApplication());
-    DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+    private final MainGameViewModel mvm = new MainGameViewModel(getApplication());
+    private final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +53,7 @@ public class MainGame extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void goToTravel(View view) throws IOException {
+    public void goToTravel(View view) {
 
         Intent intent = new Intent(getApplicationContext(), TravelView.class);
         startActivity(intent);
@@ -101,7 +101,7 @@ public class MainGame extends AppCompatActivity {
         return (Game) obj;
     }
 
-    public void setText() {
+    private void setText() {
         solarSystemText.setText("Solar System: " + mvm.getGame().getUniverse().getCurrentSS().getName());
         planetText.setText("Planet: " + mvm.getGame().getUniverse().getCurrentSS().getCurrentPlanet().getName());
         fuelText.setText("Fuel Left: " + mvm.getGame().getPlayer().getSpaceship().getFuelLeft());

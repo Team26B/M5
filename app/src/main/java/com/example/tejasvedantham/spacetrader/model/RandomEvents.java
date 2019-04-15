@@ -4,7 +4,7 @@ public enum RandomEvents {
     INCREASED_CREDITS("The galactic stock exchange paid you 100 credits!"),
     INCREASED_PRICES("The prices of all goods on this planet increased by 50%!");
 
-    private String message;
+    private final String message;
 
     /**
      * Initializes a random event

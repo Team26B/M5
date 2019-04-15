@@ -25,9 +25,9 @@ import java.util.List;
 public class TravelView extends AppCompatActivity {
 
     private Spinner travelSpinner;
-    final MainGameViewModel mvm = new MainGameViewModel(getApplication());
-    int fuelLeft;
-    double distance;
+    private final MainGameViewModel mvm = new MainGameViewModel(getApplication());
+    private int fuelLeft;
+    private double distance;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,7 +95,7 @@ public class TravelView extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void initialize() {
+    private void initialize() {
         TextView travelScreenText = findViewById(R.id.travelScreenText);
         TextView selectText = findViewById(R.id.selectText);
         travelSpinner = findViewById(R.id.travel_spinner);

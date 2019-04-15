@@ -19,7 +19,7 @@ public class SolarSystem {
     private Coordinate location;
     private TechLevel techLevel;
     private Resource resource;
-    private ArrayList<Planet> planets = new ArrayList<>();
+    private final ArrayList<Planet> planets = new ArrayList<>();
     private Market market;
     private Planet currentPlanet;
     /**
@@ -27,13 +27,12 @@ public class SolarSystem {
      * @param name the name of the solar system
      * @param coordinate the location of solar system
      * @param techLevel the tech level of the solar system
-     * @param resource the resource of the solar system
      */
-    public SolarSystem(String name, Coordinate coordinate, TechLevel techLevel, Resource resource) {
+    private SolarSystem(String name, Coordinate coordinate, TechLevel techLevel) {
         this.name = name;
         this.location = coordinate;
         this.techLevel = techLevel;
-        this.resource = resource;
+        this.resource = Resource.NOSPECIALRESOURCES;
         Planet tempP = new Planet(name);
         planets.add(tempP);
         market = new Market(this.techLevel);
@@ -48,7 +47,7 @@ public class SolarSystem {
      * @param coordinate the location of solar system
      */
     public SolarSystem(String name, Coordinate coordinate) {
-        this(name, coordinate, TechLevel.PREAGRICULTURE, Resource.NOSPECIALRESOURCES);
+        this(name, coordinate, TechLevel.PREAGRICULTURE);
     }
 
     public String getName() {
@@ -67,7 +66,7 @@ public class SolarSystem {
         this.location = location;
     }
 
-    public TechLevel getTechLevel() {
+    private TechLevel getTechLevel() {
         return techLevel;
     }
 
@@ -75,7 +74,7 @@ public class SolarSystem {
         this.techLevel = techLevel;
     }
 
-    public Resource getResource() {
+    private Resource getResource() {
         return resource;
     }
 

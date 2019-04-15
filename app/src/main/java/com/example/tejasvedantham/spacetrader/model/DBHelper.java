@@ -11,17 +11,17 @@ import java.io.IOException;
 import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
 
-public class DBHelper extends SQLiteOpenHelper {
+class DBHelper extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "SpaceTrader.db";
-    public static final int DATABASE_VERSION = 1;
+    private static final String DATABASE_NAME = "SpaceTrader.db";
+    private static final int DATABASE_VERSION = 1;
 
-    public static final String GAME_TABLE_NAME = "Game";
+    private static final String GAME_TABLE_NAME = "Game";
 
-    public static final String GAME_COLUMN_ID = "_id";
-    public static final String GAME_COLUMN_NAME = "game";
+    private static final String GAME_COLUMN_ID = "_id";
+    private static final String GAME_COLUMN_NAME = "game";
 
-    public String query1 = "CREATE TABLE " + GAME_TABLE_NAME + "(" +
+    private final String query1 = "CREATE TABLE " + GAME_TABLE_NAME + "(" +
             GAME_COLUMN_ID + " INTEGER PRIMARY KEY," +
             GAME_COLUMN_NAME + " TEXT);";
 
@@ -63,7 +63,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return db.rawQuery("SELECT * FROM " + GAME_TABLE_NAME, null);
     }
 
-    public static byte[] toByteArray(Game game) throws IOException {
+    private static byte[] toByteArray(Game game) throws IOException {
         byte[] bytes;
 
         try (ByteArrayOutputStream bos = new ByteArrayOutputStream(); ObjectOutput out = new ObjectOutputStream(bos)) {

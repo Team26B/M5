@@ -15,7 +15,7 @@ public class Market {
         this(new ArrayList<TradeGood>(), level);
     }
 
-    public Market(ArrayList<TradeGood> onShip, TechLevel level) {
+    private Market(ArrayList<TradeGood> onShip, TechLevel level) {
         this.onShip = onShip;
         this.level = level;
         setPrices();
@@ -47,7 +47,7 @@ public class Market {
         this.level = level;
     }
 
-    public void setPrices() {
+    private void setPrices() {
         int base;
         int ipl;
         int var;

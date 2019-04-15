@@ -15,16 +15,16 @@ import java.util.ArrayList;
  */
 public class Player {
 
-    private String name;
-    private int pilotPoints;
-    private int fighterPoints;
-    private int traderPoints;
-    private int engineerPoints;
+    private final String name;
+    private final int pilotPoints;
+    private final int fighterPoints;
+    private final int traderPoints;
+    private final int engineerPoints;
     private int numCredits;
-    private boolean isBountyHunter;
-    private boolean isPirate;
-    private Spaceship spaceship;
-    private ArrayList<TradeGood> ownedGoods;
+    private final boolean isBountyHunter;
+    private final boolean isPirate;
+    private final Spaceship spaceship;
+    private final ArrayList<TradeGood> ownedGoods;
     /**
      * Creates a player object with a defualt name and spaceship and 4 skill points for each skill
      */
@@ -62,7 +62,7 @@ public class Player {
      *
      * @return the name of the player
      */
-    public String getName() {
+    private String getName() {
         return name;
     }
 
@@ -71,7 +71,7 @@ public class Player {
      *
      * @return the pilot skill points
      */
-    public int getPilotPoints() {
+    private int getPilotPoints() {
         return pilotPoints;
     }
 
@@ -80,7 +80,7 @@ public class Player {
      *
      * @return the fighter skill points
      */
-    public int getFighterPoints() {
+    private int getFighterPoints() {
         return fighterPoints;
     }
 
@@ -89,7 +89,7 @@ public class Player {
      *
      * @return the trader skill points
      */
-    public int getTraderPoints() {
+    private int getTraderPoints() {
         return traderPoints;
     }
 
@@ -98,7 +98,7 @@ public class Player {
      *
      * @return the engineer skill points
      */
-    public int getEngineerPoints() {
+    private int getEngineerPoints() {
         return engineerPoints;
     }
 
@@ -206,19 +206,19 @@ public class Player {
         return isPirate;
     }
 
-    /**
-     * Handles the player making a trade
-     */
-    public void trade() {
-        //This method will be implemented in a later version
-    }
-
-    /**
-     * Handles the player making a robbery
-     */
-    public void rob() {
-        //This method will be implemented in a later version
-    }
+//    /**
+//     * Handles the player making a trade
+//     */
+//    public void trade() {
+//        //This method will be implemented in a later version
+//    }
+//
+//    /**
+//     * Handles the player making a robbery
+//     */
+//    public void rob() {
+//        //This method will be implemented in a later version
+//    }
 
     @NonNull
     public String toString() {

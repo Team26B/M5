@@ -28,17 +28,17 @@ public class MarketView extends AppCompatActivity {
     private TextView numCreditsText;
     private TextView goodsOnShipText;
     private LinearLayout sl;
-    MarketViewModel mvm = new MarketViewModel(getApplication());
-    List<TradeGood> forSale = mvm.getGame()
+    private final MarketViewModel mvm = new MarketViewModel(getApplication());
+    private final List<TradeGood> forSale = mvm.getGame()
             .getUniverse()
             .getCurrentSS()
             .getMarket()
             .getOnMarket();
 
-    Button[] buyButtons = new Button[forSale.size()];
-    Button[] sellButtons = new Button[forSale.size()];
-    TextView[] buytextViews = new TextView[forSale.size()];
-    TextView[] sellTextViews = new TextView[forSale.size()];
+    private final Button[] buyButtons = new Button[forSale.size()];
+    private final Button[] sellButtons = new Button[forSale.size()];
+    private final TextView[] buytextViews = new TextView[forSale.size()];
+    private final TextView[] sellTextViews = new TextView[forSale.size()];
 
     //DBHelper db = new DBHelper(this);
     //Cursor cursor = db.getGameFromDB();
@@ -130,7 +130,7 @@ public class MarketView extends AppCompatActivity {
 
     }
 
-    public void sellFunction(final int index) {
+    private void sellFunction(final int index) {
 
         final LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         params.setMargins(10, 10, 10, 10);

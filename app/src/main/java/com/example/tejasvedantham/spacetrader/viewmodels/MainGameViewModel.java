@@ -25,9 +25,9 @@ public class MainGameViewModel extends AndroidViewModel {
         game.getUniverse().getCurrentSS().setCurrentPlanet(game.getUniverse().getCurrentSS().getPlanets().get(0));
     }
 
-    public void updateMarket(Market nMarket) {
-
-    }
+    //public void updateMarket(Market nMarket) {
+//
+  //  }
 
     public void updateTravelDistanceLeft(int td) {
         game.getPlayer().getSpaceship().getSpaceShipType().setTravelDistance(td);

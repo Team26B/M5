@@ -11,8 +11,8 @@ package com.example.tejasvedantham.spacetrader.model;
 public class Spaceship {
 
     private SpaceshipType spaceshipType;
-    int cargoNum;
-    int fuelLeft;
+    private int cargoNum;
+    private int fuelLeft;
     /**
      * Creates a spaceship object with a designated name and skill points
      *

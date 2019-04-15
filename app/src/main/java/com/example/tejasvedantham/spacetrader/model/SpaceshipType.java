@@ -17,9 +17,13 @@ public enum SpaceshipType {
     private int numCargoBays;
     private int numCrewQuarters;
 
-    public int getSize() {
-        return size;
-    }
+// --Commented out by Inspection START (4/14/19, 9:45 PM):
+// --Commented out by Inspection START (4/14/19, 9:45 PM):
+////    public int getSize() {
+////        return size;
+////    }
+//// --Commented out by Inspection STOP (4/14/19, 9:45 PM)
+// --Commented out by Inspection STOP (4/14/19, 9:45 PM)
 
     public void setSize(int size) {
         this.size = size;
@@ -30,22 +34,38 @@ public enum SpaceshipType {
     }
 
     public void setTravelDistance(int travelDistance) {
-        this.travelDistance = travelDistance;
-    }
-
-    public int getHullStrength() {
-        return hullStrength;
-    }
-
-    public void setHullStrength(int hullStrength) {
-        this.hullStrength = hullStrength;
-    }
-
-    public int getNumWeapons() {
-        return numWeapons;
-    }
-
-    public void setNumWeapons(int numWeapons) {
+// --Commented out by Inspection START (4/14/19, 9:45 PM):
+//        this.travelDistance = travelDistance;
+//    }
+//
+// --Commented out by Inspection START (4/14/19, 9:45 PM):
+////// --Commented out by Inspection START (4/14/19, 9:45 PM):
+//// --Commented out by Inspection STOP (4/14/19, 9:45 PM)
+////    public int getHullStrength() {
+// --Commented out by Inspection STOP (4/14/19, 9:45 PM)
+//        return hullStrength;
+//    }
+// --Commented out by Inspection START (4/14/19, 9:45 PM):
+//// --Commented out by Inspection START (4/14/19, 9:45 PM):
+////// --Commented out by Inspection STOP (4/14/19, 9:45 PM)
+// --Commented out by Inspection STOP (4/14/19, 9:45 PM)
+//
+//    public void setHullStrength(int hullStrength) {
+// --Commented out by Inspection START (4/14/19, 9:45 PM):
+//// --Commented out by Inspection STOP (4/14/19, 9:45 PM)
+//        this.hullStrength = hullStrength;
+//    }
+//
+// --Commented out by Inspection START (4/14/19, 9:45 PM):
+//// --Commented out by Inspection STOP (4/14/19, 9:45 PM)
+//    public int getNumWeapons() {
+//// --Commented out by Inspection START (4/14/19, 9:45 PM):
+// --Commented out by Inspection STOP (4/14/19, 9:45 PM)
+//        return numWeapons;
+//    }
+//
+//    public void setNumWeapons(int numWeapons) {
+// --Commented out by Inspection STOP (4/14/19, 9:45 PM)
         this.numWeapons = numWeapons;
     }
 
@@ -58,11 +78,13 @@ public enum SpaceshipType {
     }
 
     public int getNumCargoBays() {
-        return numCargoBays;
-    }
-
-    public void setNumCargoBays(int numCargoBays) {
-        this.numCargoBays = numCargoBays;
+// --Commented out by Inspection START (4/14/19, 9:45 PM):
+//        return numCargoBays;
+//    }
+//
+//    public void setNumCargoBays(int numCargoBays) {
+//        this.numCargoBays = numCargoBays;
+// --Commented out by Inspection STOP (4/14/19, 9:45 PM)
     }
 
     public int getNumCrewQuarters() {

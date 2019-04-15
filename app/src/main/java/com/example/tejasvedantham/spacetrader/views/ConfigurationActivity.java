@@ -105,7 +105,7 @@ public class ConfigurationActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void setFighterSeekbar() {
+    private void setFighterSeekbar() {
         fighterSeekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
             @Override
@@ -125,7 +125,7 @@ public class ConfigurationActivity extends AppCompatActivity {
         });
     }
 
-    public void setPilotSeekbar() {
+    private void setPilotSeekbar() {
         pilotSeekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
             @Override
@@ -145,7 +145,7 @@ public class ConfigurationActivity extends AppCompatActivity {
         });
     }
 
-    public void setTraderSeekbar() {
+    private void setTraderSeekbar() {
         traderSeekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
             @Override
@@ -166,7 +166,7 @@ public class ConfigurationActivity extends AppCompatActivity {
     }
 
 
-    public void setEngineerSeekbar() {
+    private void setEngineerSeekbar() {
         engineerSeekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
             @Override
@@ -186,7 +186,7 @@ public class ConfigurationActivity extends AppCompatActivity {
         });
     }
 
-    public void initialize() {
+    private void initialize() {
         FloatingActionButton startButton = findViewById(R.id.startButton);
         nameField = findViewById(R.id.nameField);
 
